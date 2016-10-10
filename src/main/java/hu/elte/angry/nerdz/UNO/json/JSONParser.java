@@ -5,6 +5,7 @@ package hu.elte.angry.nerdz.UNO.json;
 
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
+import java.util.List;
 
 /**
  * @author marfoldi
@@ -22,6 +23,6 @@ public interface JSONParser {
 	 * Parses the JSON string
 	 * @param path
 	 */
-	public void parseJSON(final String jsonString);
+	public List<? extends Object> parseJSON(final String jsonString);
 	
 }
