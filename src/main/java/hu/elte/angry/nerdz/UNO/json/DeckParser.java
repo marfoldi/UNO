@@ -3,8 +3,6 @@
  */
 package hu.elte.angry.nerdz.UNO.json;
 
-import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import java.util.List;
 
 /**
@@ -12,15 +10,6 @@ import java.util.List;
  *
  */
 public class DeckParser implements JSONParser {
-
-	/* (non-Javadoc)
-	 * @see hu.elte.angry.nerdz.UNO.json.JSONParser#readFile(java.nio.file.Path)
-	 */
-	@Override
-	public String readFile(Path path) throws FileNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/* (non-Javadoc)
 	 * @see hu.elte.angry.nerdz.UNO.json.JSONParser#parseJSON(java.lang.String)

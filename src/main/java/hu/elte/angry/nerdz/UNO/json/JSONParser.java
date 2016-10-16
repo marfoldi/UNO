@@ -3,7 +3,8 @@
  */
 package hu.elte.angry.nerdz.UNO.json;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -16,12 +17,15 @@ public interface JSONParser {
 	 * Reads the file and saves it's content to a String
 	 * @param path
 	 * @return a JSON string
+	 * @throws IOException 
 	 */
-	public String readFile(final Path path) throws FileNotFoundException;
+	public default String readFile(final Path path) throws IOException {
+		return new String(Files.readAllBytes(path));
+	}
 	
 	/**
 	 * Parses the JSON string
-	 * @param path
+	 * @param jsonString
 	 */
 	public List<? extends Object> parseJSON(final String jsonString);
 	
