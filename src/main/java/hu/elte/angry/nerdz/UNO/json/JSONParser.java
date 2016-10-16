@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,6 +29,9 @@ public interface JSONParser {
 	 * Parses the JSON string
 	 * @param jsonString
 	 */
-	public List<? extends Object> parseJSON(final String jsonString);
+	public default List<? extends Object> parseJSON(final String jsonString) {
+		List<? extends Object> objectList = new ArrayList<>();
+		return objectList;
+	}
 	
 }
