@@ -4,6 +4,7 @@
 package hu.elte.angry.nerdz.UNO.json;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -20,7 +21,7 @@ public interface JSONParser {
 	 * @throws IOException 
 	 */
 	public default String readFile(final Path path) throws IOException {
-		return new String(Files.readAllBytes(path));
+		return new String(Files.readAllBytes(path), Charset.forName("UTF-8"));
 	}
 	
 	/**
