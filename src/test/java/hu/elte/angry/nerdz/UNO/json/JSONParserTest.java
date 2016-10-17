@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +41,12 @@ public class JSONParserTest {
 	 */
 	@Before
 	public void setUp() {
-		parser = new JSONParser() {};
+		parser = new JSONParser() {
+			@Override
+			public <T> List<T> parseJSON(String jsonString) {
+				// TODO Auto-generated method stub
+				return null;
+			}};
 	}
 	
 	/**

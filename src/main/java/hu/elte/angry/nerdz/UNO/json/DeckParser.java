@@ -15,9 +15,9 @@ public class DeckParser implements JSONParser {
 	 * @see hu.elte.angry.nerdz.UNO.json.JSONParser#parseJSON(java.lang.String)
 	 */
 	@Override
-	public List<? extends Object> parseJSON(String jsonString) {
+	public <T> List<T> parseJSON(String jsonString) {
 		// TODO Auto-generated method stub
-		// TODO Return List of cards instead of Objects
+		// TODO Return List of cards
 		return null;
 	}
 
