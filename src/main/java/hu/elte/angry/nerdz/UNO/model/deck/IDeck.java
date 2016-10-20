@@ -47,5 +47,12 @@ public interface IDeck {
 		return cards.contains(c);
 	}
   
-  
+  public void shuffle() {
+		ArrayList<Card> c = new ArrayList<Card>(108);
+		while (cards.size() > 0) {
+			c.add(cards.remove((int) (cards.size() * Math.random())));
+		}
+		cards = c;
+	}
+}
 }
