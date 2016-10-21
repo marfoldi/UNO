@@ -1,4 +1,4 @@
-package hu.elte.angry.nerdz.UNO.card;
+package hu.elte.angry.nerdz.UNO.model.card;
 
 public class Card implements ICard {
 	private CardValue value;
