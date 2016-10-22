@@ -1,5 +1,12 @@
 package hu.elte.angry.nerdz.UNO.model.player;
 
-public interface StepComplition {
+import java.util.List;
 
+import hu.elte.angry.nerdz.UNO.model.card.ICard;
+
+public interface StepComplition {
+	
+	public List<ICard> drawCards(int amount);
+	
+	public boolean dropCard(ICard card);
 }
