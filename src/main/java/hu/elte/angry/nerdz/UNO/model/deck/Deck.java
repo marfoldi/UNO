@@ -87,3 +87,4 @@ public class Deck implements IDeck {
     public boolean hasJokers() {
         return (deck.length == 54);
     } 
+}
