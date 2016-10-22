@@ -88,3 +88,30 @@ public class Deck implements IDeck {
         return (deck.length == 54);
     } 
 }
+
+
+ /**
+     * As cards are dealt from the deck, the number of cards left
+     * decreases.  This function returns the number of cards that
+     * are still left in the deck.  The return value would be
+     * 52 or 54 (depending on whether the deck includes Jokers)
+     * when the deck is first created or after the deck has been
+     * shuffled.  It decreases by 1 each time the dealCard() method
+     * is called.
+     */
+
+
+ /**Mivel a lapot osztanak ki a pakliból, a kártyák 
+     * Csökken. Ez a függvény a kártyák száma, amely
+     * Pakli kártyák száma amely visszatéritési érték lesz. 
+     * 52 vagy 54 (attól függően, hogy a pakliban joker)
+     * Ha a pakli első létrehozásakor vagy azt követően a fedélzeten volt
+     * Megkeverjük. Csökkenti 1 valahányszor a dealCard () metódus
+     * nak, hívják */
+
+
+    public int cardsLeft() {
+        return deck.length - cardsUsed;
+    } 
+
+}
