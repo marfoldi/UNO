@@ -55,6 +55,7 @@ public class Deck implements IDeck {
 			System.exit(1);
 		}
 		
+		
 		cards.addAll(playedCards);
 		playedCards.clear();
 		
