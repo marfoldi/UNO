@@ -62,3 +62,14 @@ public class Deck implements IDeck {
 	}
 
 }
+
+
+
+ public Card dealCard() {
+        if (cardsUsed == deck.length)
+            throw new IllegalStateException("No cards are left in the deck.");
+        cardsUsed++;
+        return deck[cardsUsed - 1]; 
+	 
+ }
+}
