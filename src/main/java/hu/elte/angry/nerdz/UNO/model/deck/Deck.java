@@ -77,3 +77,13 @@ public class Deck implements IDeck {
 	 
  }
 }
+
+
+/**
+     Teszt-e a pakliban joker.
+     * @return Igaz, ha ez egy 54-kártyacsomag, amely két joker, vagy hamis, ha
+     * Ez egy 52 lapos pakli, amely nem tartalmaz joker.*/
+
+    public boolean hasJokers() {
+        return (deck.length == 54);
+    } 
