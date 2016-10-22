@@ -115,3 +115,10 @@ public class Deck implements IDeck {
     } 
 
 }
+
+
+public void printDeck() {
+		for (int i = 0; i < cards.size(); i++) {
+			System.out.println(cards.get(i).toString());
+		}
+	} 
