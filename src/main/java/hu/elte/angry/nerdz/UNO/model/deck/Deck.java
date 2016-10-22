@@ -63,7 +63,7 @@ public class Deck implements IDeck {
 
 }
 
-/*Eltávolítja a következő kártyát a fedélzet és vissza. Ez illegális
+/*Eltávolítja a következő kártyát a fedélzet és vissza. 
      * Hívni ezt a módszert, ha már nincs több kártya a pakliban. 
      * Ellenőrizze a kártyák száma fennmaradó meghívásával cardsLeft () függvény.
      * @return A kártyát eltávolítjuk a pakliból.
