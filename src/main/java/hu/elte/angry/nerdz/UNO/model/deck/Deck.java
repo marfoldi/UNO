@@ -114,3 +114,39 @@ public void printDeck() {
 			System.out.println(cards.get(i).toString());
 		}
 	} 
+
+
+public void shuffle() {
+		if (cards.size() < DECK_SIZE) {
+			setupDeck();
+		}
+
+		// for every card in the deck it switches
+		// it with a random card in the deck
+		Card temp;
+		Random rand = new Random();
+		for (int i = cards.size() - 1; i >= 1; i--) {
+			temp = cards.get(i);
+			int randInt = Math.abs(rand.nextInt()) % i;
+			cards.set(i, cards.get(randInt));
+			cards.set(randInt, temp);
+		}
+	}
+
+	public void shuffle(Card card) {
+		// same as parameterless method call except
+		// it doesn't reset card number and setup
+		cards.add(card);
+
+		// for every card in the deck it switches
+		// it with a random card in the deck
+		Card temp;
+		Random rand = new Random();
+		for (int i = cards.size() - 1; i >= 1; i--) {
+			temp = cards.get(i);
+			int randInt = Math.abs(rand.nextInt()) % i;
+			cards.set(i, cards.get(randInt));
+			cards.set(randInt, temp);
+		}
+	}
+ 
