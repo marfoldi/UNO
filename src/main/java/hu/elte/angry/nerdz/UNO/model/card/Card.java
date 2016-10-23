@@ -22,30 +22,13 @@ public class Card implements ICard {
 	}
 	
 	/* (non-Javadoc)
-	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#setColor(hu.elte.angry.nerdz.UNO.model.card.CardColor)
-	 */
-	@Override
-	public void setColor(CardColor color) {
-		this.color = color;
-	}
-	
-	/* (non-Javadoc)
 	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#getColor()
 	 */
 	@Override
 	public CardColor getColor() {
 		return color;
 	}
-
-
-	/* (non-Javadoc)
-	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#setValue(hu.elte.angry.nerdz.UNO.model.card.CardValue)
-	 */
-	@Override
-	public void setValue(CardValue value) {
-		this.value = value;
-	}
-
+	
 	/* (non-Javadoc)
 	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#getValue()
 	 */
