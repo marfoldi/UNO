@@ -51,4 +51,12 @@ public class Card implements ICard {
 		
 		return colorCheck || valueCheck;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Card [color=" + color + ", value=" + value + "]";
+	}
 }

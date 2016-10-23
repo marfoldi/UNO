@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.elte.angry.nerdz.UNO.json;
+package hu.elte.angry.nerdz.UNO.cardparser;
 
 import static org.junit.Assert.*;
 
@@ -19,13 +19,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import hu.elte.angry.nerdz.UNO.model.card.ICard;
+import hu.elte.angry.nerdz.UNO.model.cardparser.ICardParser;
+
 /**
  * @author marfoldi
  *
  */
 @RunWith(Parameterized.class)
-public class JSONParserTest {
-	private JSONParser parser;
+public class FileReaderTest {
+	private ICardParser parser;
 	private Path path;
 	private String fileContent;
 	
@@ -37,13 +40,13 @@ public class JSONParserTest {
 	}
 	
 	/**
-	 * Create a new JSONParser before each test
+	 * Create a new parser before each test
 	 */
 	@Before
 	public void setUp() {
-		parser = new JSONParser() {
+		parser = new ICardParser() {
 			@Override
-			public <T> List<T> parseJSON(String jsonString) {
+			public List<ICard> parseJSON(String jsonString) {
 				// TODO Auto-generated method stub
 				return null;
 			}};
@@ -54,7 +57,7 @@ public class JSONParserTest {
 	 * @param path
 	 * @param fileContent
 	 */
-	public JSONParserTest(Path path, String fileContent) {
+	public FileReaderTest(Path path, String fileContent) {
 		this.path = path;
 		this.fileContent = fileContent;
 	}
@@ -65,6 +68,7 @@ public class JSONParserTest {
 	 */
 	@Test
 	public void testReadFile() throws IOException {
+		assertNotNull(parser);
 		assertNotNull(path);
 		assertNotNull(fileContent);
 		assertEquals(fileContent, parser.readFile(path));

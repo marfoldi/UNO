@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import hu.elte.angry.nerdz.UNO.model.card.ICard;
+
 
 /**
  * @author marfoldi
@@ -29,6 +31,6 @@ public interface ICardParser {
 	 * Parses the JSON string
 	 * @param jsonString
 	 */
-	public <T> List<T> parseJSON(final String jsonString);
+	public List<ICard> parseJSON(final String jsonString);
 	
 }
