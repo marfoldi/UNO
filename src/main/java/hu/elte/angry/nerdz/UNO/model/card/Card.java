@@ -4,7 +4,7 @@
 package hu.elte.angry.nerdz.UNO.model.card;
 
 /**
- * @author gpeter1009
+ * @author Peter Gerencser
  *
  */
 public class Card implements ICard {
@@ -52,5 +52,20 @@ public class Card implements ICard {
 	@Override
 	public CardValue getValue() {
 		return value;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#matchingCard()
+	 */
+	@Override
+	public boolean matchingCard(ICard card) {
+		if (!(card instanceof Card)) {
+			return false;
+		}
+		
+		boolean colorCheck = color.equals(card.getColor());
+		boolean valueCheck = value.equals(card.getValue());
+		
+		return colorCheck || valueCheck;
 	}
 }
