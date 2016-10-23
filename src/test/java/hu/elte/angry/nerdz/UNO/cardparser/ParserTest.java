@@ -37,7 +37,7 @@ public class ParserTest {
 	}
 	
 	/**
-	 * File reader test
+	 * Parser test
 	 * @throws IOException
 	 */
 	@Test
