@@ -5,4 +5,4 @@
  * @author marfoldi
  *
  */
-package hu.elte.angry.nerdz.UNO.json;
+package hu.elte.angry.nerdz.UNO.model.cardparser;
