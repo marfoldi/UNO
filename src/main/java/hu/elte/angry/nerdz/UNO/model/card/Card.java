@@ -1,44 +1,61 @@
+/**
+ * 
+ */
 package hu.elte.angry.nerdz.UNO.model.card;
 
 /**
- * 
  * @author Peter Gerencser
- * 
- * Default implementation for the ICard.
- * This Card implementation can be used in the game of UNO.
  *
  */
 public class Card implements ICard {
-	private CardValue value;
 	private CardColor color;
-
-	public Card(CardValue value, CardColor color) {
-		this.value = value;
-		this.color = color;
-	}
+	private CardValue value;
 
 	/**
-	 * Gets the value of the card
-	 * @return
+	 * @param color
+	 * @param value
+	 */
+	public Card(CardColor color, CardValue value) {
+		super();
+		this.color = color;
+		this.value = value;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#setColor(hu.elte.angry.nerdz.UNO.model.card.CardColor)
 	 */
 	@Override
-	public CardValue getValue() {
-		return value;
+	public void setColor(CardColor color) {
+		this.color = color;
 	}
-
-	/**
-	 * Gets the color of the card
-	 * @return
+	
+	/* (non-Javadoc)
+	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#getColor()
 	 */
 	@Override
 	public CardColor getColor() {
 		return color;
 	}
 
-	/**
-	 * Determines if the card can be placed on top of the parameter card
-	 * @param card
-	 * @return
+
+	/* (non-Javadoc)
+	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#setValue(hu.elte.angry.nerdz.UNO.model.card.CardValue)
+	 */
+	@Override
+	public void setValue(CardValue value) {
+		this.value = value;
+	}
+
+	/* (non-Javadoc)
+	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#getValue()
+	 */
+	@Override
+	public CardValue getValue() {
+		return value;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hu.elte.angry.nerdz.UNO.model.card.ICard#matchingCard()
 	 */
 	@Override
 	public boolean matchingCard(ICard card) {
@@ -51,5 +68,4 @@ public class Card implements ICard {
 		
 		return colorCheck || valueCheck;
 	}
-
 }

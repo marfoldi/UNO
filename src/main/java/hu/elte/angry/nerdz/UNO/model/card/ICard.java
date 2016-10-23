@@ -10,21 +10,31 @@ package hu.elte.angry.nerdz.UNO.model.card;
  *
  */
 public interface ICard {
-	
 	/**
-	 * Gets the value of the card
-	 * @return
+	 * Sets the card color
+	 * @param color
 	 */
-	public CardValue getValue();
+	public void setColor(CardColor color);
 	
 	/**
-	 * Gets the color of the card
-	 * @return
+	 * Returns the card color
+	 * @return a CardColor object
 	 */
 	public CardColor getColor();
 	
 	/**
-	 * Determines if the card can be placed on top of the parameter card
+	 * Sets the card value
+	 * @param value
+	 */
+	public void setValue(CardValue value);
+	
+	/**
+	 * Returns the card value
+	 * @return A CardValue object
+	 */
+	public CardValue getValue();
+	
+	/**Determines if the card can be placed on top of the parameter card
 	 * @param card
 	 * @return
 	 */
