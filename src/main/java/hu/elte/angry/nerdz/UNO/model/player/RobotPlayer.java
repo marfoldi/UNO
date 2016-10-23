@@ -11,7 +11,7 @@ public class RobotPlayer extends AbstractPlayer {
 	
 	private Timer timer;
 	
-	RobotPlayer() {
+	public RobotPlayer() {
 		timer = new Timer();
 	}
 
