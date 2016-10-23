@@ -37,7 +37,6 @@ public class DeckParser implements ICardParser {
 		    	deck.addAll(createSingleColorCardList(CardColor.valueOf(cardColor.toUpperCase()), (JSONArray) cardValues));
 		    }
 		}
-		System.out.println(deck.toString());
 		return deck;
 	}
 	
