@@ -34,7 +34,7 @@ public class DeckParser implements ICardParser {
 			String cardColor = key.toString();
 		    Object cardValues = root.get(cardColor);
 		    if(cardValues instanceof JSONArray) {
-		    	deck.addAll(createSingleColorCardList(CardColor.valueOf(cardColor), (JSONArray) cardValues));
+		    	deck.addAll(createSingleColorCardList(CardColor.valueOf(cardColor.toUpperCase()), (JSONArray) cardValues));
 		    }
 		}
 		System.out.println(deck.toString());
