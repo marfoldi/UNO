@@ -3,6 +3,9 @@
  */
 package hu.elte.angry.nerdz.UNO.model.cardparser;
 
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +22,25 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
  *
  */
 public class DeckParser implements ICardParser {
+	public final Path PATH;
+	
+	/**
+	 * Default constructor
+	 * @throws URISyntaxException 
+	 * 
+	 */
+	public DeckParser() throws URISyntaxException {
+		this("cards.json");
+	}
+	
+	/**
+	 * Constructor with path string parameter
+	 * @param pathString
+	 * @throws URISyntaxException
+	 */
+	public DeckParser(String pathString) throws URISyntaxException {
+		PATH = Paths.get(ClassLoader.getSystemResource(pathString).toURI());
+	}
 
 	/* (non-Javadoc)
 	 * @see hu.elte.angry.nerdz.UNO.json.JSONParser#parseJSON(java.lang.String)
