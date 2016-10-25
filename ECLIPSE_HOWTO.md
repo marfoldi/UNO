@@ -1,4 +1,4 @@
-To import the project properly to Eclipse do the following:
+In order import the project properly to Eclipse do the following:
   - Install m2e-egit plugin from Eclipse Marketplace.
  
 Then the project can be pulled as follow:
