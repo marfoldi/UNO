@@ -9,7 +9,7 @@ public class UNO_SWING {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 final JFrame frame = new JFrame("Menu Demo");
+		 final JFrame frame = new JFrame("Uno Card Game");
 	        frame.setJMenuBar(createMenuBar());
 	 
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,7 +35,7 @@ public class UNO_SWING {
     menuBar.add(menu);
 
     //a group of JMenuItems
-    menuItem = new JMenuItem("New Project...",
+    menuItem = new JMenuItem("New Game...",
             new ImageIcon("images/newproject.png"));
     menuItem.setMnemonic(KeyEvent.VK_P);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(
@@ -44,34 +44,34 @@ public class UNO_SWING {
             "New Project");
     menu.add(menuItem);
 
-    menuItem = new JMenuItem("New File...",
+   /* menuItem = new JMenuItem("New File...",
             new ImageIcon("images/newfile.png"));
     menuItem.setMnemonic(KeyEvent.VK_F);
-    menu.add(menuItem);
+    menu.add(menuItem); */
 
     //a group of check box menu items
-    menu.addSeparator();
+   /* menu.addSeparator();
     cbmi = new JCheckBoxMenuItem("A check box menu item");
     cbmi.setMnemonic(KeyEvent.VK_C);
-    menu.add(cbmi);
+    menu.add(cbmi); */
 
-    cbmi = new JCheckBoxMenuItem("Another one");
+  /*  cbmi = new JCheckBoxMenuItem("Another one");
     cbmi.setMnemonic(KeyEvent.VK_H);
-    menu.add(cbmi);
+    menu.add(cbmi); */
 
     //a group of radio button menu items
-    menu.addSeparator();
+  /*  menu.addSeparator();
     ButtonGroup group = new ButtonGroup();
     rdmi = new JRadioButtonMenuItem("Radio button menu item");
     rdmi.setSelected(true);
     rdmi.setMnemonic(KeyEvent.VK_R);
     group.add(rdmi);
-    menu.add(rdmi);
+    menu.add(rdmi); */
 
-    rdmi = new JRadioButtonMenuItem("Another radio button");
+ /*   rdmi = new JRadioButtonMenuItem("Another radio button");
     rdmi.setMnemonic(KeyEvent.VK_O);
     group.add(rdmi);
-    menu.add(rdmi);
+    menu.add(rdmi); */
 
     //a submenu
     menu.addSeparator();
@@ -95,10 +95,14 @@ public class UNO_SWING {
     menuBar.add(menu);
     return menuBar;
 
+  
+	  }  
+    
+    
 }
 	
 	
 	
-	}
+	
 
 
