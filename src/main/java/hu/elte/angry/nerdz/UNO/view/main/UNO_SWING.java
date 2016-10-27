@@ -13,17 +13,20 @@ public class UNO_SWING {
 	        frame.setJMenuBar(createMenuBar());
 	 
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        frame.setSize(500, 300);
+	        frame.setSize(700, 700);
 	        frame.setVisible(true);
 	}
-	  public static JMenuBar createMenuBar() {
+	  
+	
+	
+	
+	public static JMenuBar createMenuBar() {
 	
 	
     JMenuBar menuBar;
     JMenu menu, submenu;
     JMenuItem menuItem;
-    JRadioButtonMenuItem rdmi;
-    JCheckBoxMenuItem cbmi;
+ 
 
     //Create the menu bar.
     menuBar = new JMenuBar();
@@ -94,12 +97,22 @@ public class UNO_SWING {
             "Edit Menu");
     menuBar.add(menu);
     return menuBar;
+	}
+    
+    
+  /*  void setCenter(JFrame ablak)
+	{
+		Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
+		int x =(int) center.getX() - (ablak.getWidth()/2);
+		int y =(int) center.getY() - (ablak.getHeight()/2);
+		Point ablakCenter = new Point(x, y);
+		ablak.setLocation(ablakCenter);  */
 
   
 	  }  
     
     
-}
+
 	
 	
 	
