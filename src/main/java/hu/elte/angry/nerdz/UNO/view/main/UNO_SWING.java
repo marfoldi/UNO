@@ -1,32 +1,45 @@
 package hu.elte.angry.nerdz.UNO.view.main;
 
 import javax.swing.*;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.event.*;
+import java.awt.FlowLayout;
+import java.awt.GraphicsEnvironment;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class UNO_SWING {
+public class UNO_SWING extends javax.swing.JFrame implements ActionListener {
 
 	
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		 final JFrame frame = new JFrame("Uno Card Game");
-	        frame.setJMenuBar(createMenuBar());
-	 
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        frame.setSize(700, 700);
-	        frame.setVisible(true);
-	}
-	  
 	
-	
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Object frame;
+
+
+
+
+
 	public static JMenuBar createMenuBar() {
-	
-	
+		
+		
+		
+		
+		
+/*	JFrame ablak;*/
     JMenuBar menuBar;
     JMenu menu, submenu;
     JMenuItem menuItem;
  
+    
+    
 
     //Create the menu bar.
     menuBar = new JMenuBar();
@@ -47,36 +60,10 @@ public class UNO_SWING {
             "New Project");
     menu.add(menuItem);
 
-   /* menuItem = new JMenuItem("New File...",
-            new ImageIcon("images/newfile.png"));
-    menuItem.setMnemonic(KeyEvent.VK_F);
-    menu.add(menuItem); */
+   
+  
 
-    //a group of check box menu items
-   /* menu.addSeparator();
-    cbmi = new JCheckBoxMenuItem("A check box menu item");
-    cbmi.setMnemonic(KeyEvent.VK_C);
-    menu.add(cbmi); */
-
-  /*  cbmi = new JCheckBoxMenuItem("Another one");
-    cbmi.setMnemonic(KeyEvent.VK_H);
-    menu.add(cbmi); */
-
-    //a group of radio button menu items
-  /*  menu.addSeparator();
-    ButtonGroup group = new ButtonGroup();
-    rdmi = new JRadioButtonMenuItem("Radio button menu item");
-    rdmi.setSelected(true);
-    rdmi.setMnemonic(KeyEvent.VK_R);
-    group.add(rdmi);
-    menu.add(rdmi); */
-
- /*   rdmi = new JRadioButtonMenuItem("Another radio button");
-    rdmi.setMnemonic(KeyEvent.VK_O);
-    group.add(rdmi);
-    menu.add(rdmi); */
-
-    //a submenu
+ 
     menu.addSeparator();
     submenu = new JMenu("A submenu");
     submenu.setMnemonic(KeyEvent.VK_S);
@@ -98,24 +85,54 @@ public class UNO_SWING {
     menuBar.add(menu);
     return menuBar;
 	}
-    
-    
-  /*  void setCenter(JFrame ablak)
-	{
-		Point center = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
-		int x =(int) center.getX() - (ablak.getWidth()/2);
-		int y =(int) center.getY() - (ablak.getHeight()/2);
-		Point ablakCenter = new Point(x, y);
-		ablak.setLocation(ablakCenter);  */
 
-  
+
+
+    
+
+   /*void centerWindow(Window frame)*/
+	
+	  void setCenter(JFrame ablak)
+   {
+	  
+
+	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		frame = null;
+		int x = (int) ((dimension.getWidth() - ((Dimension) frame).getWidth()) / 2);
+		int y = (int) ((dimension.getHeight() - ((Dimension) frame).getHeight()) / 2);
+		
+		Point ablakCenter = new Point(x, y);
+		ablak.setLocation(ablakCenter);
+
 	  }  
     
-    
 
 	
+
+public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	 final JFrame frame = new JFrame("Uno Card Game");
+      frame.setJMenuBar(createMenuBar());
+ 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(700, 700);
+      
+        frame.setVisible(true);
+}
+
+
+
+
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
 	
+}
+  
+
 	
+}
 	
 
 
