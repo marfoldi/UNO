@@ -23,7 +23,7 @@ import org.junit.Test;
  * UNIT tests for the GameManager implementation of the IGameManager
  *
  */
-public class GameManagerTests {
+public class GameManagerTest {
 	
 	private DeckMock deck;
 	private PlayerMock player;
