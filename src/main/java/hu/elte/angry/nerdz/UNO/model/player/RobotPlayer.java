@@ -37,7 +37,7 @@ public class RobotPlayer extends AbstractPlayer {
 	    		} else {
 	    			// Robot player randomly selects a card from the available ones
 	    			int cardIndex = (new Random()).nextInt(validCards.size());	
-	    			completionHandler.drop(cards.get(cardIndex));
+	    			completionHandler.drop(validCards.get(cardIndex));
 	    		}
 	        	
 	        }
