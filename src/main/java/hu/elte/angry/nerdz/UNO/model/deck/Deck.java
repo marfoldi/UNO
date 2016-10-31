@@ -1,7 +1,7 @@
 package hu.elte.angry.nerdz.UNO.model.deck;
 
 
-
+import hu.elte.angry.nerdz.UNO.model.card.Card;
 import hu.elte.angry.nerdz.UNO.model.card.ICard;
 
 import java.util.ArrayList;
@@ -64,14 +64,49 @@ public class Deck implements IDeck {
 		Collections.shuffle(cards);
 	}
 
+/*Robert*/
+	/* insertCard(): This inserts a card in the deck*/
 
+	
+	public void insertCard(Card card) {
+		cards.add(0, card);
+	}
+	
+	public void insertCardAtLast(Card card) {
+		cards.add(card);
+	}
+	
+	public boolean isEmpty() {
+		return cards.isEmpty();
+	}
+	
+	public boolean exists(Card card) {
+		
+		boolean sameColor = false;
+		boolean sameValue = false;
+		boolean isOnlyValue = card.getColor() == Card.NULL; //this tests if the method only wants a value withour regarding about the color
+		
+		for (int i = 0; i != cards.size(); i += 1) {
+			sameColor = isOnlyValue? true: card.getColor() == showCard(i).getColor();
+			sameValue = card.getValue() == showCard(i).getValue();
+			
+			if (sameColor && sameValue) return true;
+		}
+		
+		return false;
+	}
 
+	private Card showCard(int i) {
+		// TODO Auto-generated method stub
+		return (Card)cards.elementAt(i);
 
-	public void shuffle() {
+			
+	}
+
 		
 		
 		
 	}
 	
-}
+
  
