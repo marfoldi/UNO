@@ -1,5 +1,7 @@
 package hu.elte.angry.nerdz.UNO.model.deck;
 
+
+
 import hu.elte.angry.nerdz.UNO.model.card.ICard;
 
 import java.util.ArrayList;
@@ -63,7 +65,14 @@ public class Deck implements IDeck {
 		}
 	}
 
-}
 
+
+
+	public void shuffle() {
+		
+		
+		
+	}
 	
+}
  
