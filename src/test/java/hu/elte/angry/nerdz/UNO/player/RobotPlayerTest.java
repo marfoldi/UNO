@@ -21,6 +21,7 @@ public class RobotPlayerTest {
 		ICard card = mock(Card.class);
 		
 		player.step(card, sc);
+		System.out.println("teszt");
 		
 		assertNotNull(((Player)player).getCompletionHandler());
 		assertEquals(sc, ((Player)player).getCompletionHandler());
