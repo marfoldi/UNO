@@ -16,7 +16,7 @@ public class Player extends AbstractPlayer{
 	 * This method gives the player the control, meaning it is his/her turn.
 	 * Method has a completionHandler, make sure it is called at the end of the turn!
 	 * 
-	 * @param actCard the actual (top) card in the game
+	 * @param actCard the actual (top) card in the game 
 	 * @param completionHandler the handler which the player must call at the end of his/her turn
 	 */
 	@Override
