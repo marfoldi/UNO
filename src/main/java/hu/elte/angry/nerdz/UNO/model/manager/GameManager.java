@@ -4,6 +4,7 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
 import hu.elte.angry.nerdz.UNO.model.deck.IDeck;
 import hu.elte.angry.nerdz.UNO.model.player.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,8 +30,9 @@ public class GameManager implements IGameManager {
 	private List<IPlayer> players;
 	private IDeck deck;
 	
-	GameManager(List<IPlayer> players, IDeck deck) {
+	public GameManager(List<IPlayer> players, IDeck deck) {
 		this.players = players;
+		this.playersCards = new HashMap<IPlayer, List<ICard>>();
 		this.deck = deck;
 	}
 	
