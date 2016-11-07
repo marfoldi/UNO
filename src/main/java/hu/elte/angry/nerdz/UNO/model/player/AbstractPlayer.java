@@ -17,8 +17,6 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
 public abstract class AbstractPlayer implements IPlayer {
  
 	protected List<ICard> cards;
-	protected ICard actCard;
-	protected StepCompletion completionHandler;
 	
 	/**
 	 * Initial cards are received through this method, acts like a delegate

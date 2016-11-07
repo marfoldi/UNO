@@ -12,6 +12,9 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
  */
 public class Player extends AbstractPlayer{
 	
+	protected ICard actCard;
+	protected StepCompletion completionHandler;
+	
 	/**
 	 * This method gives the player the control, meaning it is his/her turn.
 	 * Method has a completionHandler, make sure it is called at the end of the turn!
@@ -33,6 +36,10 @@ public class Player extends AbstractPlayer{
 	@Override
 	public void onCardsChange() {
 		// TODO update the UI
+	}
+
+	public StepCompletion getCompletionHandler() {
+		return completionHandler;
 	}
 	
 }
