@@ -59,4 +59,18 @@ public class Card implements ICard {
 	public String toString() {
 		return "Card [color=" + color + ", value=" + value + "]";
 	}
+	
+	@Override
+	public int hashCode() {
+		return color.getStringRepresentation().hashCode() + ((Integer) value.getIntegerRepresentation()).hashCode(); 
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (!(other instanceof Card)) {
+			return false;
+		}
+		Card otherCard = (Card) other;
+		return value.equals(otherCard.getValue()) && color.equals(otherCard.getColor());
+	}
 }
