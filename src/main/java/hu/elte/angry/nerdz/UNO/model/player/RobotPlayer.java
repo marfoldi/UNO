@@ -24,6 +24,7 @@ public class RobotPlayer extends AbstractPlayer {
 	 */
 	@Override
 	public void step(ICard actCard, StepCompletion completionHandler) {
+		System.out.println("Robot turn... Thinking..");
 		List<ICard> validCards = getValidCards(actCard);
 		
 		// Waits a random time (1s - 5s) before acting
@@ -33,11 +34,14 @@ public class RobotPlayer extends AbstractPlayer {
 	        public void run() {
 	        	
 	        	if (validCards.isEmpty()) {
+	        		System.out.println("I dont have any card, drawing");
 	    			completionHandler.draw();
 	    		} else {
 	    			// Robot player randomly selects a card from the available ones
-	    			int cardIndex = (new Random()).nextInt(validCards.size());	
-	    			completionHandler.drop(validCards.get(cardIndex));
+	    			int cardIndex = (new Random()).nextInt(validCards.size());
+	    			ICard cardToDrop = validCards.get(cardIndex);
+	    			System.out.println("Dropping card: " + cardToDrop);
+	    			completionHandler.drop(cardToDrop);
 	    		}
 	        	
 	        }
