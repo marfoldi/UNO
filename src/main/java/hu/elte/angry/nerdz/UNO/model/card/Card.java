@@ -62,31 +62,7 @@ public class Card implements ICard {
 	
 	@Override
 	public int hashCode() {
-		String colorString;
-		Integer valueInt;
-		
-		switch (color) {
-		case RED: colorString = "red"; break;
-		case YELLOW: colorString = "yellow"; break;
-		case BLUE: colorString = "blue"; break;
-		case GREEN: colorString = "green"; break;
-		default: colorString = "wtf";
-		}
-		
-		switch (value) {
-		case ONE: valueInt = 1;
-		case TWO: valueInt = 2;
-		case THREE: valueInt = 3;
-		case FOUR: valueInt = 4;
-		case FIVE: valueInt = 5;
-		case SIX: valueInt = 6;
-		case SEVEN: valueInt = 7;
-		case EIGHT: valueInt = 8;
-		case NINE: valueInt = 9;
-		default: valueInt = -1;
-		}
-		
-		return colorString.hashCode() + valueInt.hashCode(); 
+		return color.getStringRepresentation().hashCode() + ((Integer) value.getIntegerRepresentation()).hashCode(); 
 	}
 	
 	@Override
