@@ -82,14 +82,11 @@ public class ConsolePlayer extends AbstractPlayer {
 			return new UserAction("pass");
 		}
 		
-		if (input.length() != 2) {
-			return null;
-		}
+		String[] components = input.split(" ");
+		String color = components[0];
+		String number = components[1];
 		
-		String colorCase = "" + input.charAt(0);
-		String numberCase = "" + input.charAt(1);
-		
-		ICard card = createCardFrom(colorCase, numberCase);
+		ICard card = createCardFrom(color, number);
 		return (cards.contains(card)) ? new UserAction("drop", card) : selectAction();
 	}
 	
@@ -100,10 +97,6 @@ public class ConsolePlayer extends AbstractPlayer {
 		} catch (NumberFormatException e) {
 			return null;
 		}
-		
-		CardColor color = CardColor.fromString(colorCase.toLowerCase());
-		
-		CardValue value;
 		
 		return new Card(CardColor.fromString(colorCase.toLowerCase()), CardValue.fromInt(number));
 	}
