@@ -45,7 +45,7 @@ public class ParserTest {
 		assertNotNull(parser);
 		assertNotNull(path);
 		List<ICard> deck = parser.parseJSON(parser.readFile(path));
-		assertEquals(4*10, deck.size());
+		assertEquals(4*20, deck.size());
 		
 		for(ICard card : deck) {
 			assertNotNull(card);
