@@ -101,30 +101,11 @@ public class ConsolePlayer extends AbstractPlayer {
 			return null;
 		}
 		
-		CardColor color;
-		switch (colorCase.toLowerCase()) {
-		case "R": color = CardColor.RED; break;
-		case "B": color = CardColor.BLUE; break;
-		case "Y": color = CardColor.YELLOW; break;
-		case "G": color = CardColor.GREEN; break;
-		default: return null;
-		}
+		CardColor color = CardColor.fromString(colorCase.toLowerCase());
 		
 		CardValue value;
-		switch (number) {
-		case 1: value = CardValue.ONE; break;
-		case 2: value = CardValue.TWO; break;
-		case 3: value = CardValue.THREE; break;
-		case 4: value = CardValue.FOUR; break;
-		case 5: value = CardValue.FIVE; break;
-		case 6: value = CardValue.SIX; break;
-		case 7: value = CardValue.SEVEN; break;
-		case 8: value = CardValue.EIGHT; break;
-		case 9: value = CardValue.NINE; break;
-		default: return null;
-		}
 		
-		return new Card(color, value);
+		return new Card(CardColor.fromString(colorCase.toLowerCase()), CardValue.fromInt(number));
 	}
 
 }
