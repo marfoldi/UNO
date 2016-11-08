@@ -111,6 +111,15 @@ public class UnoSwings extends JFrame implements ActionListener {
 			}
 		});
 
+		newAction.addActionListener(new ActionListener() {
+
+			/* newAction.addActionListener(new ActionListener() { */
+
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+
 	}
 
 	protected void processWindowEvent(WindowEvent e) {
