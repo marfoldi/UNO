@@ -1,4 +1,4 @@
-package hu.elte.abgry.nerdz.UNO.card;
+package hu.elte.angry.nerdz.UNO.card;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
