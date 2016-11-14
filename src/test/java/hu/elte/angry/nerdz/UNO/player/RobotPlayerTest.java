@@ -1,5 +1,6 @@
 package hu.elte.angry.nerdz.UNO.player;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,6 +68,24 @@ public class RobotPlayerTest {
 		TimeUnit.SECONDS.sleep(5);	
 		
 		assertEquals("drop", result);
+		
+	}
+	
+	@Test
+	public void testCardsLength() throws InterruptedException{
+		ICard card = new Card(CardColor.BLACK, CardValue.EIGHT);
+		ArrayList<ICard> cards = new ArrayList<>();
+		int beforeCardSize =0;
+		int afterCardSize = 0;
+		cards.add(card);
+		player.setCards(cards);
+		//beforeCardSize=
+		StepCompletion sc =  mock(StepCompletion.class);
+		
+		player.step(card, sc);
+		TimeUnit.SECONDS.sleep(5);	
+		//afterCardSize = +1
+		assertEquals(beforeCardSize, afterCardSize);
 		
 	}
 
