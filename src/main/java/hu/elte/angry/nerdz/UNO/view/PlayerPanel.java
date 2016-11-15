@@ -21,77 +21,73 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
  * @author gp
  *
  */
-public class JatekosPanel extends JPanel {
-	private List<JButton> lst = new ArrayList<>();// lapok listája
-	private int i = 0;// lapok száma
+public class PlayerPanel extends JPanel {
+	private List<JButton> buttonList = new ArrayList<>();// lapok listája
+	private int numOfCards = 0;// lapok száma
 	private JPanel panel = new JPanel();// ezen jelennek meg a lapok
-	private Asztal asztal;
+	private Desk desk;
 
-	public JatekosPanel() {
-		i = 0;
+	public PlayerPanel(Desk desk, List<ICard> initCardList) {
+		numOfCards = 0;
+		this.desk = desk;
 		JScrollPane sp = new JScrollPane(panel);
 		sp.setPreferredSize(new Dimension(600, 180));
 		add(sp);
-		// lapokatHozzaad(lst);
-		lapokatMegjelenit();
-	}
-
-	public void asztaltBeallit(Asztal a) {
-		asztal = a;
+		addCards(initCardList);
 	}
 
 	/**
 	 * A paraméterként kapott lapot hozzáadja a játékos lapjaihoz.
 	 * 
-	 * @param lap
+	 * @param card
 	 */
-	public void lapotHozzaad(ICard lap) {
-		JButton btn = new JButton(lap.getValue().toString());
+	public void addCard(ICard card) {
+		JButton btn = new JButton(card.getValue().toString());
 		btn.setForeground(Color.DARK_GRAY);
 		btn.setFont(new Font(getName(), Font.BOLD, 18));
-		btn.setBackground(szin(lap));
-		btn.setName("" + i);
+		btn.setBackground(getColorOfCard(card));
+		btn.setName("" + numOfCards);
 		btn.setPreferredSize(new Dimension(100, 150));
-		btn.addActionListener(new AkcioFigyelo(asztal, this));
-		lst.add(btn);
-		i++;
-		lapokatMegjelenit();
+		btn.addActionListener(new AkcioFigyelo(desk, this));
+		buttonList.add(btn);
+		numOfCards++;
+		showCards();
 	}
 
 	/**
 	 * A paraméterként kapott lap színét adja vissza.
 	 * 
-	 * @param lap
+	 * @param card
 	 * @return
 	 */
 	// TODO A CardColor-ban a YELLOW helyett Color.YELLOW, RED helyett
 	// Color.RED, stb. ?
-	private Color szin(ICard lap) {
-		Color szin = Color.BLACK;
-		switch (lap.getColor().ordinal()) {
+	private Color getColorOfCard(ICard card) {
+		Color color = Color.BLACK;
+		switch (card.getColor().ordinal()) {
 		case 0:
-			szin = Color.YELLOW;
+			color = Color.YELLOW;
 			break;
 		case 1:
-			szin = Color.RED;
+			color = Color.RED;
 			break;
 		case 2:
-			szin = Color.GREEN;
+			color = Color.GREEN;
 			break;
 		case 3:
-			szin = Color.BLUE;
+			color = Color.BLUE;
 			break;
 		}
-		return szin;
+		return color;
 	}
 
 	/**
 	 * Megjeleníti a játékos lapjait.
 	 */
-	public void lapokatMegjelenit() {
+	public void showCards() {
 		panel.setVisible(false);
-		for (JButton lap : lst) {
-			panel.add(lap);
+		for (JButton card : buttonList) {
+			panel.add(card);
 		}
 		panel.setVisible(true);
 	}
@@ -104,22 +100,22 @@ public class JatekosPanel extends JPanel {
 	 *            ezt az indexű lapot kell a listából törölni.
 	 */
 	public void lapotDob(int j) {
-		panel.remove(lst.remove(j));
-		for (int k = j; k < lst.size(); k++) {
-			lst.get(k).setName("" + k);
+		panel.remove(buttonList.remove(j));
+		for (int k = j; k < buttonList.size(); k++) {
+			buttonList.get(k).setName("" + k);
 		}
-		i--;
+		numOfCards--;
 	}
 
 	/**
 	 * A paraméterként kapott listában levő lapokat hozzáveszi a játékos
 	 * lapjaihoz.
 	 * 
-	 * @param lst
+	 * @param cardList
 	 */
-	public void lapokatHozzaad(List<ICard> lst) {
-		for (ICard lap : lst) {
-			lapotHozzaad(lap);
+	private void addCards(List<ICard> cardList) {
+		for (ICard card : cardList) {
+			addCard(card);
 		}
 	}
 
