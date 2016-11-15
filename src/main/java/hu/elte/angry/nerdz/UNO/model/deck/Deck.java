@@ -55,11 +55,12 @@ public class Deck implements IDeck {
 			System.exit(1);
 		}
 		
-		
-		cards.addAll(playedCards);
-		playedCards.clear();
-		
-		Collections.shuffle(cards);
+		if (cards.size() < amount) {
+			cards.addAll(playedCards);
+			playedCards.clear();
+			
+			Collections.shuffle(cards);
+		}
 	}
 
 }

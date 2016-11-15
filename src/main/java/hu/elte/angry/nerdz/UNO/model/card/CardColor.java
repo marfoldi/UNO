@@ -34,7 +34,7 @@ public enum CardColor {
 	 */
 	public static CardColor fromString(String value) {
 		for(CardColor cardColor : CardColor.values()) {
-			if(cardColor.getStringRepresentation() == value) {
+			if(cardColor.getStringRepresentation().equals(value)) {
 				return cardColor;
 			}
 		}
