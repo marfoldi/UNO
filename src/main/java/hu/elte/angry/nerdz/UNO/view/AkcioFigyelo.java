@@ -19,41 +19,41 @@ import javax.swing.JButton;
  *
  */
 public class AkcioFigyelo implements ActionListener {
-	private JatekosPanel jatekosPanel;
-	private Asztal asztal;
+	private PlayerPanel playerPanel;
+	private Desk desk;
 
-	public AkcioFigyelo(Asztal a, JatekosPanel jp) {
-		asztal = a;
-		jatekosPanel = jp;
+	public AkcioFigyelo(Desk desk, PlayerPanel playerPanel) {
+		this.desk = desk;
+		this.playerPanel = playerPanel;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		String label = arg0.getActionCommand();
-		if (label.equals("Új lap")) {
-			jatekosPanel.lapotHozzaad(veletlenLap());
-		} else if (asztal.felsoLap.getText().equals(((JButton) arg0.getSource()).getText())
-				|| asztal.felsoLap.getBackground().equals(((JButton) arg0.getSource()).getBackground())) {
-			jatekosPanel.lapotDob(Integer.parseInt(((JButton) arg0.getSource()).getName()));
-			CardColor szin = CardColor.YELLOW;
+		if (label.equals("New card")) {
+			playerPanel.addCard(randomCard());
+		} else if (desk.topOfDeck.getText().equals(((JButton) arg0.getSource()).getText())
+				|| desk.topOfDeck.getBackground().equals(((JButton) arg0.getSource()).getBackground())) {
+			playerPanel.lapotDob(Integer.parseInt(((JButton) arg0.getSource()).getName()));
+			CardColor cardColor = CardColor.YELLOW;
 			if (((JButton) arg0.getSource()).getBackground() == Color.YELLOW) {
-				szin = CardColor.YELLOW;
+				cardColor = CardColor.YELLOW;
 			} else if (((JButton) arg0.getSource()).getBackground() == Color.RED) {
-				szin = CardColor.RED;
+				cardColor = CardColor.RED;
 			} else if (((JButton) arg0.getSource()).getBackground() == Color.GREEN) {
-				szin = CardColor.GREEN;
+				cardColor = CardColor.GREEN;
 			} else if (((JButton) arg0.getSource()).getBackground() == Color.BLUE) {
-				szin = CardColor.BLUE;
+				cardColor = CardColor.BLUE;
 			}
-			CardValue szam = CardValue.EIGHT;
+			CardValue cardValue = CardValue.EIGHT;
 			for (CardValue cv : CardValue.values()) {
 				if (cv.toString().equals(((JButton) arg0.getSource()).getText())) {
-					szam = cv;
+					cardValue = cv;
 				}
 			}
-			asztal.felsoLap(new Card(szin, szam));
+			desk.showTopOfDeck(new Card(cardColor, cardValue));
 		}
-		jatekosPanel.lapokatMegjelenit();
+		playerPanel.showCards();
 	}
 
 	/**
@@ -63,25 +63,25 @@ public class AkcioFigyelo implements ActionListener {
 	 *
 	 * @return
 	 */
-	private ICard veletlenLap() {
-		Random gen = new Random();
-		CardColor szin = null;
-		switch (gen.nextInt(4)) {
+	private ICard randomCard() {
+		Random rnd = new Random();
+		CardColor cardColor = null;
+		switch (rnd.nextInt(4)) {
 		case 0:
-			szin = CardColor.YELLOW;
+			cardColor = CardColor.YELLOW;
 			break;
 		case 1:
-			szin = CardColor.RED;
+			cardColor = CardColor.RED;
 			break;
 		case 2:
-			szin = CardColor.GREEN;
+			cardColor = CardColor.GREEN;
 			break;
 		case 3:
-			szin = CardColor.BLUE;
+			cardColor = CardColor.BLUE;
 			break;
 		}
-		int szam = gen.nextInt(10);
-		return new Card(szin, CardValue.fromInt(szam));
+		int cardValue = rnd.nextInt(10);
+		return new Card(cardColor, CardValue.fromInt(cardValue));
 	}
 
 }
