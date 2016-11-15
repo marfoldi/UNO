@@ -17,8 +17,6 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
 public abstract class AbstractPlayer implements IPlayer {
  
 	protected List<ICard> cards;
-	protected ICard actCard;
-	protected StepCompletion completionHandler;
 	
 	/**
 	 * Initial cards are received through this method, acts like a delegate
@@ -35,7 +33,7 @@ public abstract class AbstractPlayer implements IPlayer {
 	 * @param forCard the card which the players' deck is filtered against
 	 * @return
 	 */
-	protected List<ICard> getValidCards(ICard forCard) {
+	public List<ICard> getValidCards(ICard forCard) {
 		List<ICard> filteredCards = cards.stream().filter( (card) -> {
 			return card.matchingCard(forCard);
 		}).collect(Collectors.toList());

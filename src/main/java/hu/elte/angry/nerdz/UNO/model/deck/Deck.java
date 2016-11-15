@@ -47,7 +47,7 @@ public class Deck implements IDeck {
 			// Note: We should not add it to the playedCards, because these cards are still in the player's hand.
 			playedCards.push(drawnCard);
 		}
-		return null;
+		return drawnCards;
 	}
 	
 	private void restock(int amount) {
@@ -57,11 +57,12 @@ public class Deck implements IDeck {
 			System.exit(1);
 		}
 		
-		
-		cards.addAll(playedCards);
-		playedCards.clear();
-		
-		Collections.shuffle(cards);
+		if (cards.size() < amount) {
+			cards.addAll(playedCards);
+			playedCards.clear();
+			
+			Collections.shuffle(cards);
+		}
 	}
 
 /*Robert*/

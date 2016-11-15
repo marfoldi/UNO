@@ -24,23 +24,30 @@ public class RobotPlayer extends AbstractPlayer {
 	 */
 	@Override
 	public void step(ICard actCard, StepCompletion completionHandler) {
+		System.out.println("Robot turn... Thinking..");
 		List<ICard> validCards = getValidCards(actCard);
-		if (validCards.isEmpty()) {
-			completionHandler.draw();
-		} else {
-			// Robot player randomly selects a card from the available ones
-			int cardIndex = (new Random()).nextInt(validCards.size());
-			
-			// Waits a random time (1s - 5s) before acting
-			long timeout = (long) (new Random()).nextInt(5000);
-			
-			TimerTask action = new TimerTask() {
-		        public void run() {
-		        	completionHandler.drop(cards.get(cardIndex));
-		        }
-		    };
-		    this.timer.schedule(action, timeout);
-		}
+		
+		// Waits a random time (1s - 5s) before acting
+		long timeout = (long) (new Random()).nextInt(4000)+1000;
+		
+		TimerTask action = new TimerTask() {
+	        public void run() {
+	        	
+	        	if (validCards.isEmpty()) {
+	        		System.out.println("I dont have any card, drawing");
+	    			completionHandler.draw();
+	    		} else {
+	    			// Robot player randomly selects a card from the available ones
+	    			int cardIndex = (new Random()).nextInt(validCards.size());
+	    			ICard cardToDrop = validCards.get(cardIndex);
+	    			System.out.println("Dropping card: " + cardToDrop);
+	    			completionHandler.drop(cardToDrop);
+	    		}
+	        	
+	        }
+	    };
+	    
+	    this.timer.schedule(action, timeout);
 	}
 
 	/**
