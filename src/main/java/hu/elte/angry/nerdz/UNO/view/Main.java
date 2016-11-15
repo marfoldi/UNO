@@ -3,6 +3,7 @@ package hu.elte.angry.nerdz.UNO.view;
 import hu.elte.angry.nerdz.UNO.model.card.*;
 
 <<<<<<< Upstream, based on master/master
+<<<<<<< Upstream, based on master/master
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,27 +34,36 @@ public class Main extends JFrame {
 		new Main();
 =======
 import java.awt.GridLayout;
+=======
+>>>>>>> e2b9b00 asztal tartalmazza a robotokat, a játékost, és a paklit
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 public class Main extends JFrame {
-	private static JatekosPanel jatekosPanel;// ezen vannak a játékos lapjai
-	private static Asztal asztal;// ezen látszik a "húzó-pakli", és az
-									// "eldobó-pakli" tetején levő lap
-	private static RobotPanel rp1, rp2;// két robot
 
-	public Main(String string) {
-		super(string);
+	public Main() {
+		super("UNO");
 		setSize(800, 600);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+		// felül levő lap
+		Card topCard = new Card(CardColor.BLUE, CardValue.SEVEN);
+
+		// játékos kezdeti lapjai
+		List<ICard> initCards = new ArrayList<ICard>();
+		initCards.add(new Card(CardColor.YELLOW, CardValue.ONE));
+		initCards.add(new Card(CardColor.RED, CardValue.FIVE));
+		initCards.add(new Card(CardColor.GREEN, CardValue.TWO));
+
+		add(new Desk(topCard, initCards));
 		setVisible(true);
 	}
 
 	public static void main(String[] args) {
+<<<<<<< Upstream, based on master/master
 		Main main = new Main("UNO");
 		main.setLayout(new GridLayout(3, 1));
 
@@ -86,6 +96,9 @@ public class Main extends JFrame {
 
 		jatekosPanel.lapotDob(1);
 >>>>>>> fb7db68 Asztal.java: pakli, aktuális lap. JatekosPanel.java: játékos lapjai. RobotPanel.java: robot játékos.
+=======
+		new Main();
+>>>>>>> e2b9b00 asztal tartalmazza a robotokat, a játékost, és a paklit
 	}
 
 }
