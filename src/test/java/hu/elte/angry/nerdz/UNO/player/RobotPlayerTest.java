@@ -74,17 +74,32 @@ public class RobotPlayerTest {
 	@Test
 	public void testCardsLength() throws InterruptedException{
 		ICard card = new Card(CardColor.BLACK, CardValue.EIGHT);
+		ICard card2 = new Card(CardColor.BLACK, CardValue.TWO);
+		ICard card3 = new Card(CardColor.BLACK, CardValue.THREE);
 		ArrayList<ICard> cards = new ArrayList<>();
 		int beforeCardSize =0;
 		int afterCardSize = 0;
 		cards.add(card);
+		cards.add(card2);
 		player.setCards(cards);
-		//beforeCardSize=
+		beforeCardSize=player.getValidCards(card3).size();
 		StepCompletion sc =  mock(StepCompletion.class);
 		
-		player.step(card, sc);
+		player.step(card, new StepCompletion() {
+
+			@Override
+			public void draw() {
+				
+			}
+
+			@Override
+			public void drop(ICard card) {
+				
+			}
+			
+		});
 		TimeUnit.SECONDS.sleep(5);	
-		//afterCardSize = +1
+		afterCardSize = (player.getValidCards(card3).size());
 		assertEquals(beforeCardSize, afterCardSize);
 		
 	}
