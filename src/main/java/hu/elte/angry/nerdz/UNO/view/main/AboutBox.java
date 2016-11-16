@@ -1,10 +1,12 @@
 package hu.elte.angry.nerdz.UNO.view.main;
 
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.TextArea;
 import javax.swing.*;
 import java.awt.Font;
+
 
 /**
  * 
