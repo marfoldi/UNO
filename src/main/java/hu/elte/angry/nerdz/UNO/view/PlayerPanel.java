@@ -42,7 +42,12 @@ public class PlayerPanel extends JPanel {
 	 * @param card
 	 */
 	public void addCard(ICard card) {
-		JButton btn = new JButton(card.getValue().toString());
+		JButton btn = new JButton();
+		if(card.getValue().getIntegerRepresentation() >=0 && card.getValue().getIntegerRepresentation() <=9) {
+			btn.setText(Integer.toString(card.getValue().getIntegerRepresentation()));
+		} else {
+			btn.setText(card.getValue().toString());
+		}
 		btn.setForeground(Color.DARK_GRAY);
 		btn.setFont(new Font(getName(), Font.BOLD, 18));
 		btn.setBackground(getColorOfCard(card));
