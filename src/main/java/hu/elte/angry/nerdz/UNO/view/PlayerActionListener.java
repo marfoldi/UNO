@@ -45,9 +45,9 @@ public class PlayerActionListener implements ActionListener {
 			} else if (((JButton) arg0.getSource()).getBackground() == Color.BLUE) {
 				cardColor = CardColor.BLUE;
 			}
-			CardValue cardValue = CardValue.EIGHT;
+			CardValue cardValue = CardValue.EIGHT; //TODO: Why EIGHT?
 			for (CardValue cv : CardValue.values()) {
-				if (cv.toString().equals(((JButton) arg0.getSource()).getText())) {
+				if (cv.toString().equals(((JButton) arg0.getSource()).getText()) || Integer.toString(cv.getIntegerRepresentation()).equals(((JButton) arg0.getSource()).getText())) {
 					cardValue = cv;
 				}
 			}
