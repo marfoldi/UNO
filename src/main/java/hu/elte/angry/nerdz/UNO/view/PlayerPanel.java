@@ -48,7 +48,7 @@ public class PlayerPanel extends JPanel {
 		btn.setBackground(getColorOfCard(card));
 		btn.setName("" + numOfCards);
 		btn.setPreferredSize(new Dimension(100, 150));
-		btn.addActionListener(new AkcioFigyelo(desk, this));
+		btn.addActionListener(new PlayerActionListener(desk, this));
 		buttonList.add(btn);
 		numOfCards++;
 		showCards();
@@ -96,10 +96,9 @@ public class PlayerPanel extends JPanel {
 	 * Eldobja a j. indexű lapot. Törli a listából, és a panelről is
 	 * eltávolítja.
 	 *
-	 * @param j:
-	 *            ezt az indexű lapot kell a listából törölni.
+	 * @param j Ezt az indexű lapot kell a listából törölni.
 	 */
-	public void lapotDob(int j) {
+	public void dropCard(int j) {
 		panel.remove(buttonList.remove(j));
 		for (int k = j; k < buttonList.size(); k++) {
 			buttonList.get(k).setName("" + k);

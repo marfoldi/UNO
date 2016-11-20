@@ -44,7 +44,7 @@ public class Desk extends JPanel {
 		deckPanel.setSize(new Dimension(300, 150));
 		// deckPanel.setLayout(new GridLayout(1, 2));
 		deck = new JButton("New card");
-		deck.addActionListener(new AkcioFigyelo(this, playerPanel));
+		deck.addActionListener(new PlayerActionListener(this, playerPanel));
 		deck.setPreferredSize(new Dimension(100, 150));
 		// pakli.setIcon(new ImageIcon("uno.jpg"));
 		deckPanel.add(deck);

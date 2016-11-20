@@ -18,11 +18,11 @@ import javax.swing.JButton;
  * @author gp
  *
  */
-public class AkcioFigyelo implements ActionListener {
+public class PlayerActionListener implements ActionListener {
 	private PlayerPanel playerPanel;
 	private Desk desk;
 
-	public AkcioFigyelo(Desk desk, PlayerPanel playerPanel) {
+	public PlayerActionListener(Desk desk, PlayerPanel playerPanel) {
 		this.desk = desk;
 		this.playerPanel = playerPanel;
 	}
@@ -34,7 +34,7 @@ public class AkcioFigyelo implements ActionListener {
 			playerPanel.addCard(randomCard());
 		} else if (desk.topOfDeck.getText().equals(((JButton) arg0.getSource()).getText())
 				|| desk.topOfDeck.getBackground().equals(((JButton) arg0.getSource()).getBackground())) {
-			playerPanel.lapotDob(Integer.parseInt(((JButton) arg0.getSource()).getName()));
+			playerPanel.dropCard(Integer.parseInt(((JButton) arg0.getSource()).getName()));
 			CardColor cardColor = CardColor.YELLOW;
 			if (((JButton) arg0.getSource()).getBackground() == Color.YELLOW) {
 				cardColor = CardColor.YELLOW;

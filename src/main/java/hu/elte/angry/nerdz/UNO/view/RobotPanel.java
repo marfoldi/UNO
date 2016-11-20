@@ -12,21 +12,17 @@ import javax.swing.JPanel;
  *
  */
 public class RobotPanel extends JPanel {
-	private JLabel nev;
-	private JLabel lapokSzama;
+	private JLabel name;
+	private JLabel cardCount;
 
 	private ImageIcon kep;
 
-	public RobotPanel(String nev, int lapokSzama) {
-		this.nev = new JLabel(nev);
-		this.lapokSzama = new JLabel(Integer.toString(lapokSzama) + " lap");
+	public RobotPanel(String name, int cardCount) {
+		this.name = new JLabel(name);
+		this.cardCount = new JLabel(Integer.toString(cardCount) + " lap");
 		kep = new ImageIcon("src/main/resources/robot2.jpg");
-		add(this.nev);
-		add(this.lapokSzama);
+		add(this.name);
+		add(this.cardCount);
 		add(new JButton(kep));
-	}
-
-	public void lapokSzama(int lapokSzama) {
-		this.lapokSzama.setText(Integer.toString(lapokSzama) + " lap");
 	}
 }
