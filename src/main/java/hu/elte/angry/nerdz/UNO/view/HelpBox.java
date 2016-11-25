@@ -2,16 +2,12 @@ package hu.elte.angry.nerdz.UNO.view;
 
 import java.awt.BorderLayout;
 
-
-
 import javax.swing.JFrame;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import javax.swing.ScrollPaneConstants;
-
-
 
 public class HelpBox extends JFrame {
 
@@ -26,22 +22,6 @@ public class HelpBox extends JFrame {
 
 	public HelpBox() {
 
-		/*
-		 * JFrame frame = new JFrame("Uno Card Help"); frame.setBounds(200, 200,
-		 * 505, 432);
-		 * 
-		 * JScrollPane scrollPane = new JScrollPane();
-		 * 
-		 * JTextPane textpane = new JTextPane();
-		 * textpane.setToolTipText("P\u00E9lda 2 ");
-		 * 
-		 * textpane.setText(
-		 * "kgaskjf gsakjfhfsdg\r\ns\r\n g\u0151\r\nsg\u0151w\r\np\r\nphrs\r\nhpg\r\nhpwr\r\nhzorwe\r\nzho\r\nzrwoz\r\nhwozr\r\nsoz\r\nrwzorw\r\nzow\r\n\u0151zowr\r\n\u0151wr\r\nzo w\r\n\u0151zowr\r\n\u0151tow\r\nzowet\r\n\u0151o\r\n"
-		 * ); scrollPane.setViewportView(textpane);
-		 * 
-		 * frame.setSize(400, 150); frame.setVisible(true);
-		 */
-
 		// create a jtextarea
 		JTextArea message = new JTextArea();
 		message.setWrapStyleWord(true);
@@ -49,12 +29,6 @@ public class HelpBox extends JFrame {
 		message.setEditable(false);
 		message.setFocusable(false);
 		message.setOpaque(false);
-
-		// add text to it; we want to make it scroll
-		/*
-		 * textArea.setText(
-		 * "xx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\nxx\n");
-		 */
 
 		message.setText("Setup:\n The game is for 2-10 players, ages 7 and over. Every player starts with seven\n"
 				+ " cards, and they are dealt face down.\n"
