@@ -32,7 +32,11 @@ public class AppAboutBox extends JFrame {
 
 		textArea.setBounds(9, 20, 160, 203);
 		textArea.setText(
+<<<<<<< HEAD
 				"Készitők:\r\n\r\nBónis Réka\r\nBárdi Zsolt\r\nGerencsér Péter\r\nOláh Róbert\r\nMárföldi Péter\r\nTörök Dániel");
+=======
+				"Készitők:\r\n\r\nBónis Réka\r\nBárdi Zsolt\r\nGerencsér Péter\r\nOláh Róbert\r\nMérföldi Péter\r\nTörök Dániel");
+>>>>>>> branch 'view' of https://github.com/marfoldi/UNO.git
 		textArea.setEditable(false);
 
 		about.getContentPane().add(textArea, BorderLayout.CENTER);

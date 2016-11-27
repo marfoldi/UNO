@@ -28,4 +28,8 @@ public class RobotPanel extends JPanel {
 		wrapperButton.setDisabledIcon(sprite);
 		add(wrapperButton);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'view' of https://github.com/marfoldi/UNO.git
