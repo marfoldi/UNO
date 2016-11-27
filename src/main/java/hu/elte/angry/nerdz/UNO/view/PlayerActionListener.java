@@ -2,7 +2,6 @@ package hu.elte.angry.nerdz.UNO.view;
 
 import hu.elte.angry.nerdz.UNO.model.card.*;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -35,19 +34,10 @@ public class PlayerActionListener implements ActionListener {
 		} else if (desk.topOfDeck.getText().equals(((JButton) arg0.getSource()).getText())
 				|| desk.topOfDeck.getBackground().equals(((JButton) arg0.getSource()).getBackground())) {
 			playerPanel.dropCard(Integer.parseInt(((JButton) arg0.getSource()).getName()));
-			CardColor cardColor = CardColor.YELLOW;
-			if (((JButton) arg0.getSource()).getBackground() == Color.YELLOW) {
-				cardColor = CardColor.YELLOW;
-			} else if (((JButton) arg0.getSource()).getBackground() == Color.RED) {
-				cardColor = CardColor.RED;
-			} else if (((JButton) arg0.getSource()).getBackground() == Color.GREEN) {
-				cardColor = CardColor.GREEN;
-			} else if (((JButton) arg0.getSource()).getBackground() == Color.BLUE) {
-				cardColor = CardColor.BLUE;
-			}
-			CardValue cardValue = CardValue.EIGHT; //TODO: Why EIGHT?
+			CardColor cardColor = CardColor.fromAwtColor(((JButton) arg0.getSource()).getBackground());
+			CardValue cardValue = null;
 			for (CardValue cv : CardValue.values()) {
-				if (cv.toString().equals(((JButton) arg0.getSource()).getText()) || Integer.toString(cv.getIntegerRepresentation()).equals(((JButton) arg0.getSource()).getText())) {
+				if (cv.toString().equals(((JButton) arg0.getSource()).getText()) || cv.getPrimitiveValue().equals(((JButton) arg0.getSource()).getText())) {
 					cardValue = cv;
 				}
 			}
@@ -81,7 +71,7 @@ public class PlayerActionListener implements ActionListener {
 			break;
 		}
 		int cardValue = rnd.nextInt(10);
-		return new Card(cardColor, CardValue.fromInt(cardValue));
+		return new Card(cardColor, CardValue.fromPrimitiveValue(Integer.toString(cardValue)));
 	}
 
 }

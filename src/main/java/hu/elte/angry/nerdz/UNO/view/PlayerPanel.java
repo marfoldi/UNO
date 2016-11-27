@@ -22,6 +22,7 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
  *
  */
 public class PlayerPanel extends JPanel {
+	private static final long serialVersionUID = 6328789247989590931L;
 	private List<JButton> buttonList = new ArrayList<>();// lapok listája
 	private int numOfCards = 0;// lapok száma
 	private JPanel panel = new JPanel();// ezen jelennek meg a lapok
@@ -42,48 +43,16 @@ public class PlayerPanel extends JPanel {
 	 * @param card
 	 */
 	public void addCard(ICard card) {
-		JButton btn = new JButton();
-		if(card.getValue().getIntegerRepresentation() >=0 && card.getValue().getIntegerRepresentation() <=9) {
-			btn.setText(Integer.toString(card.getValue().getIntegerRepresentation()));
-		} else {
-			btn.setText(card.getValue().toString());
-		}
+		JButton btn = new JButton(card.getValue().getPrimitiveValue());
 		btn.setForeground(Color.DARK_GRAY);
 		btn.setFont(new Font(getName(), Font.BOLD, 18));
-		btn.setBackground(getColorOfCard(card));
+		btn.setBackground(card.getColor().getAwtColor());
 		btn.setName("" + numOfCards);
 		btn.setPreferredSize(new Dimension(100, 150));
-		btn.addActionListener(new AkcioFigyelo(desk, this));
+		btn.addActionListener(new PlayerActionListener(desk, this));
 		buttonList.add(btn);
 		numOfCards++;
 		showCards();
-	}
-
-	/**
-	 * A paraméterként kapott lap színét adja vissza.
-	 * 
-	 * @param card
-	 * @return
-	 */
-	// TODO A CardColor-ban a YELLOW helyett Color.YELLOW, RED helyett
-	// Color.RED, stb. ?
-	private Color getColorOfCard(ICard card) {
-		Color color = Color.BLACK;
-		switch (card.getColor().ordinal()) {
-		case 0:
-			color = Color.YELLOW;
-			break;
-		case 1:
-			color = Color.RED;
-			break;
-		case 2:
-			color = Color.GREEN;
-			break;
-		case 3:
-			color = Color.BLUE;
-			break;
-		}
-		return color;
 	}
 
 	/**
@@ -101,10 +70,9 @@ public class PlayerPanel extends JPanel {
 	 * Eldobja a j. indexű lapot. Törli a listából, és a panelről is
 	 * eltávolítja.
 	 *
-	 * @param j:
-	 *            ezt az indexű lapot kell a listából törölni.
+	 * @param j Ezt az indexű lapot kell a listából törölni.
 	 */
-	public void lapotDob(int j) {
+	public void dropCard(int j) {
 		panel.remove(buttonList.remove(j));
 		for (int k = j; k < buttonList.size(); k++) {
 			buttonList.get(k).setName("" + k);

@@ -5,7 +5,6 @@ package hu.elte.angry.nerdz.UNO.GameManagerTests;
 
 import hu.elte.angry.nerdz.UNO.Mock.*;
 import hu.elte.angry.nerdz.UNO.model.card.ICard;
-import hu.elte.angry.nerdz.UNO.model.deck.IDeck;
 import hu.elte.angry.nerdz.UNO.model.manager.GameManager;
 import hu.elte.angry.nerdz.UNO.model.player.IPlayer;
 

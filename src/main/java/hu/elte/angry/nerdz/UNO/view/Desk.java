@@ -20,6 +20,7 @@ import javax.swing.JPanel;
  *
  */
 public class Desk extends JPanel {
+	private static final long serialVersionUID = 145727429985277184L;
 	private JButton deck;// ez a "húzó-pakli", erre kattintva lehet lapot húzni
 	JButton topOfDeck;// ez az "eldobó-pakli" tetején levő lap
 	private RobotPanel rp1, rp2;// két robot
@@ -44,7 +45,7 @@ public class Desk extends JPanel {
 		deckPanel.setSize(new Dimension(300, 150));
 		// deckPanel.setLayout(new GridLayout(1, 2));
 		deck = new JButton("New card");
-		deck.addActionListener(new AkcioFigyelo(this, playerPanel));
+		deck.addActionListener(new PlayerActionListener(this, playerPanel));
 		deck.setPreferredSize(new Dimension(100, 150));
 		// pakli.setIcon(new ImageIcon("uno.jpg"));
 		deckPanel.add(deck);
@@ -86,36 +87,11 @@ public class Desk extends JPanel {
 	 * @return
 	 */
 	private JButton getJButtonFromCard(ICard card) {
-		JButton btn = new JButton();
-		if(card.getValue().getIntegerRepresentation() >=0 && card.getValue().getIntegerRepresentation() <=9) {
-			btn.setText(Integer.toString(card.getValue().getIntegerRepresentation()));
-		} else {
-			btn.setText(card.getValue().toString());
-		}
+		JButton btn = new JButton(card.getValue().getPrimitiveValue());
 		btn.setForeground(Color.DARK_GRAY);
 		btn.setFont(new Font(getName(), Font.BOLD, 18));
-		btn.setBackground(getColorOfCard(card));
+		btn.setBackground(card.getColor().getAwtColor());
 		btn.setPreferredSize(new Dimension(100, 150));
 		return btn;
 	}
-
-	private Color getColorOfCard(ICard card) {
-		Color color = Color.BLACK;
-		switch (card.getColor().ordinal()) {
-		case 0:
-			color = Color.YELLOW;
-			break;
-		case 1:
-			color = Color.RED;
-			break;
-		case 2:
-			color = Color.GREEN;
-			break;
-		case 3:
-			color = Color.BLUE;
-			break;
-		}
-		return color;
-	}
-
 }
