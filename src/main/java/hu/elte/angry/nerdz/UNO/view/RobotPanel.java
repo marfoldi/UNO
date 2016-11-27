@@ -12,17 +12,20 @@ import javax.swing.JPanel;
  *
  */
 public class RobotPanel extends JPanel {
+	private static final long serialVersionUID = -4263179279756886584L;
 	private JLabel name;
 	private JLabel cardCount;
-
-	private ImageIcon kep;
+	private ImageIcon sprite;
 
 	public RobotPanel(String name, int cardCount) {
 		this.name = new JLabel(name);
-		this.cardCount = new JLabel(Integer.toString(cardCount) + " lap");
-		kep = new ImageIcon("src/main/resources/robot2.jpg");
+		this.cardCount = new JLabel(Integer.toString(cardCount) + " cards");
+		sprite = new ImageIcon("src/main/resources/robot2.jpg");
 		add(this.name);
 		add(this.cardCount);
-		add(new JButton(kep));
+		JButton wrapperButton = new JButton(sprite);
+		wrapperButton.setEnabled(false);
+		wrapperButton.setDisabledIcon(sprite);
+		add(wrapperButton);
 	}
 }

@@ -36,7 +36,7 @@ public class Desk extends JPanel {
 		opponentPanel.setLayout(new GridLayout(1, 2));
 		opponentPanel.add(rp1);
 		opponentPanel.add(rp2);
-		add(opponentPanel);
+		this.add(opponentPanel);
 
 		playerPanel = new PlayerPanel(this, initCardList);
 

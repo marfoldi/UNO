@@ -1,4 +1,4 @@
-package hu.elte.angry.nerdz.UNO.view;
+package hu.elte.angry.nerdz.UNO.view.window;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
@@ -7,20 +7,10 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
 
-public class HelpBox extends JFrame {
-
-	/**
-	 * 
-	 */
+public class AppHelpBox extends JFrame {
 	private static final long serialVersionUID = 6053886643319617200L;
 
-	/**
-	 * 
-	 */
-
-	public HelpBox() {
-
-		// create a jtextarea
+	public AppHelpBox() {
 		JTextArea message = new JTextArea();
 		message.setWrapStyleWord(true);
 		message.setLineWrap(true);
@@ -68,13 +58,11 @@ public class HelpBox extends JFrame {
 				+ "also choose whatever points number to win the game, as" + "long as everyone agrees to it");
 
 		// create a scrollpane, givin it the textarea as a constructor argument
-		JScrollPane ScrollPane = new JScrollPane(message,
-
-				ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		JScrollPane ScrollPane = new JScrollPane(message, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
 		// now add the scrollpane to the jframe's content pane, specifically
 		// placing it in the center of the jframe's borderlayout
-		JFrame frame = new JFrame("JScrollPane Test");
+		JFrame frame = new JFrame("UNO Help");
 		/* frame.setBounds(200, 800,805, 932); */
 
 		/* frame.setPreferredSize(new Dimension(900, 800)); */
@@ -86,10 +74,7 @@ public class HelpBox extends JFrame {
 
 		ScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		ScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-		// make it easy to close the application
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		
 		// set the frame size (you'll usually want to call frame.pack())
 		/* frame.setSize(new Dimension(240, 180)); */
 

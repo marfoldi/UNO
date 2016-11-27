@@ -1,4 +1,4 @@
-package hu.elte.angry.nerdz.UNO.view;
+package hu.elte.angry.nerdz.UNO.view.window;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -12,11 +12,11 @@ import java.awt.Font;
  *
  */
 
-public class AboutBox extends JFrame {
+public class AppAboutBox extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	public AboutBox() {
+	public AppAboutBox() {
 
 		setLayout(new GridLayout());
 		JFrame about = new JFrame();
