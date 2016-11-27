@@ -66,7 +66,7 @@ public class Card implements ICard {
 	 */
 	@Override
 	public int hashCode() {
-		return color.getStringRepresentation().hashCode() + ((Integer) value.getIntegerRepresentation()).hashCode(); 
+		return color.getStringRepresentation().hashCode() + value.getPrimitiveValue().hashCode(); 
 	}
 	
 	/*

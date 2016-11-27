@@ -72,7 +72,13 @@ public class DeckParser implements ICardParser {
 		List<ICard> cardsForCurrentColor = new ArrayList<>(cardValues.length());
 		for(int i=0; i<cardValues.length(); ++i) {
 			Object valueObject = cardValues.opt(i);
-			CardValue value = CardValue.fromInt((Integer) valueObject);
+			CardValue value;
+			if(valueObject instanceof Integer) {
+				value = CardValue.fromPrimitiveValue(Integer.toString((Integer) valueObject));
+			}
+			else {
+				value = CardValue.fromPrimitiveValue((String) valueObject);
+			}
 			if(value != null) {
 				cardsForCurrentColor.add(new Card(color, value));				
 			}

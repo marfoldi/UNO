@@ -9,29 +9,29 @@ package hu.elte.angry.nerdz.UNO.model.card;
  */
 public enum CardValue {
 	//ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE;
-	ZERO(0), ONE(1), TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(9);
+	ZERO("0"), ONE("1"), TWO("2"), THREE("3"), FOUR("4"), FIVE("5"), SIX("6"), SEVEN("7"), EIGHT("8"), NINE("9");
 
-	private final int integerRepresentation;
+	private final String primitiveValue;
 
-	CardValue(int integerRepresentation) {
-		this.integerRepresentation = integerRepresentation;
+	CardValue(String primitiveValue) {
+		this.primitiveValue = primitiveValue;
 	}
 	
 	/**
-	 * @return the integerRepresentation
+	 * @return the primitiveValue
 	 */
-	public int getIntegerRepresentation() {
-		return integerRepresentation;
+	public String getPrimitiveValue() {
+		return primitiveValue;
 	}
 
 	/**
-	 * Looks up a CardValue by it's integer representation
+	 * Looks up a CardValue by it's primitive value
 	 * @param value
 	 * @return
 	 */
-	public static CardValue fromInt(int value) {
+	public static CardValue fromPrimitiveValue(String value) {
 		for(CardValue cardValue : CardValue.values()) {
-			if(cardValue.getIntegerRepresentation() == value) {
+			if(cardValue.primitiveValue.equals(value)) {
 				return cardValue;
 			}
 		}

@@ -91,14 +91,7 @@ public class ConsolePlayer extends AbstractPlayer {
 	}
 	
 	private ICard createCardFrom(String colorCase, String numberCase) {
-		int number;
-		try {
-			number = Integer.parseInt(numberCase);
-		} catch (NumberFormatException e) {
-			return null;
-		}
-		
-		return new Card(CardColor.fromString(colorCase.toLowerCase()), CardValue.fromInt(number));
+		return new Card(CardColor.fromString(colorCase.toLowerCase()), CardValue.fromPrimitiveValue(numberCase));
 	}
 
 }
