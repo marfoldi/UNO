@@ -1,8 +1,6 @@
 package hu.elte.angry.nerdz.UNO.card;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
@@ -12,8 +10,8 @@ public class CardValueTest {
 	
 	@Test
 	public void testCardColorFromString(){
-		int val = 2;
-		CardValue cv = CardValue.fromInt(val);
-		assertEquals(cv.getIntegerRepresentation(), val);
+		Integer val = 2;
+		CardValue cv = CardValue.fromPrimitiveValue(Integer.toString(val));
+		assertEquals(Integer.valueOf(cv.getPrimitiveValue()), val);
 	}
 }
