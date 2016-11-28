@@ -67,7 +67,7 @@ public class HelpBox extends JFrame {
 				+ "Once a player has no cards remaining, the game round is over, points"
 				+ " are scored, and the game begins over again. Normally,"
 				+ "veryone tries to be the first one to achieve 500 points, but you can"
-				+ "also choose whatever points number to win the game, as" + "long as everyone agrees to it");
+				+ "also choose whatever points number to win the game, as" + "long as everyone agrees to it x");
 
 		// create a scrollpane, givin it the textarea as a constructor argument
 		JScrollPane ScrollPane = new JScrollPane(message,
