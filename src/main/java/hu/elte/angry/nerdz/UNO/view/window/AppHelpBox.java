@@ -55,7 +55,22 @@ public class AppHelpBox extends JFrame {
 				+ "Once a player has no cards remaining, the game round is over, points"
 				+ " are scored, and the game begins over again. Normally,"
 				+ "veryone tries to be the first one to achieve 500 points, but you can"
-				+ "also choose whatever points number to win the game, as" + "long as everyone agrees to it");
+				+ "also choose whatever points number to win the game, as" + "long as everyone agrees to it\n"
+				
+				+ "Game Play: \n The first player is normally the player to the left of the dealer (you can also choose "
+				+ "the youngest player) and gameplay usually follows a clockwise direction. Every player views his/her cards "
+				+ "and tries to match the card in the Discard Pile"
+				+ "You have to match either by the number, color, or the symbol/Action. For instance, if the Discard Pile has a red card "
+				+ "that is an 8 you have to place either a red card or a card with an 8 on it. You can also play a Wild card (which can alter current color in play"
+				+ "If the player has no matches or they choose not to play any of their cards even though they might have a match, they must draw a card from the Draw pile"
+				+ "If that card can be played, play it. Otherwise, the game moves on to the next person in turn. You can also play a Wild card, or a Wild Draw Four card on your turn"
+				+ "Note:\n If the first card turned up from the Draw Pile (to form the Discard Pile) is an Action card, the Action from that card applies and must be carried out"
+				+ " The exceptions are if the Wild or Wild Draw Four cards are turned up, in which case – Return them to the Draw Pile, shuffle them, and turn over a new card. At any time, if"
+				+ " the Draw Pile becomes depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate a new Draw Pile");
+				
+				
+				
+				
 
 		// create a scrollpane, givin it the textarea as a constructor argument
 		JScrollPane ScrollPane = new JScrollPane(message, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
