@@ -68,7 +68,15 @@ public class AppHelpBox extends JFrame {
 				+ " The exceptions are if the Wild or Wild Draw Four cards are turned up, in which case – Return them to the Draw Pile, shuffle them, and turn over a new card. At any time, if"
 				+ " the Draw Pile becomes depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate a new Draw Pile");
 				
-				
+				+ "There are two different ways to play regarding drawing new cards. The Official Uno Rules states that after a card is drawn the player can discard it if it is a match, or if not, play passes on to the next player. "
+				+ "The other type is where players continue to draw cards until they have a match, even if it is 10 times"
+				+ "The game continues until a player has one card left. The moment a player has just one card they must yell “UNO!”. If they are caught not saying “Uno” by another player"
+				+ " before any card has been played, the player must draw two new cards. Once a player has no cards remaining, the game round is over, points are scored, and the game "
+				+ "begins over again. Normally, everyone tries to be the first one to achieve 500 points, but you can also choose whatever points number to win the game, as long as everyone agrees to it"
+				+"\n"
+				+ "Action Cards:\n"
+				+ " Besides the number cards, there are several other cards that help mix up the game. These are called Action or Symbol cards");
+		
 				
 				
 
