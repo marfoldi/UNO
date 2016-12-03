@@ -75,10 +75,17 @@ public class AppHelpBox extends JFrame {
 				+ "begins over again. Normally, everyone tries to be the first one to achieve 500 points, but you can also choose whatever points number to win the game, as long as everyone agrees to it"
 				+"\n"
 				+ "Action Cards:\n"
-				+ " Besides the number cards, there are several other cards that help mix up the game. These are called Action or Symbol cards");
+				+ " Besides the number cards, there are several other cards that help mix up the game. These are called Action or Symbol cards"
+				+"Reverse\n "
+				+ "If going clockwise, switch to counterclockwise or vice versa"
+				+ "Skip\n"
+				+ "When a player places this card, the next player has to skip their turn. If turned up at the beginning, the first player loses his/her turn"
+				+ "Draw Two\n"
+				+ "When a person places this card, the next player will have to pick up two cards and forfeit his/her turn"
+				+ "Wild\n"
+				+ "This card represents all four colors, and can be placed on any card. The player has to state which color it will represent for the next player."
+				+ " It can be played regardless of whether another card is available.");
 		
-				
-				
 
 		// create a scrollpane, givin it the textarea as a constructor argument
 		JScrollPane ScrollPane = new JScrollPane(message, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
