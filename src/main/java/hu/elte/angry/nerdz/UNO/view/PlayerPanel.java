@@ -1,6 +1,7 @@
 package hu.elte.angry.nerdz.UNO.view;
 
 import java.awt.Dimension;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +33,8 @@ public class PlayerPanel extends JPanel{
 	 * 
 	 * @param card
 	 */
-	public void addCard(CardPanel card) {
+	public void addCard(CardPanel card, ActionListener actionListener) {
+		card.addActionListener(actionListener);
 		cardList.add(card);
 		showCards();
 	}

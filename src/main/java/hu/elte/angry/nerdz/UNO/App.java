@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 import hu.elte.angry.nerdz.UNO.view.CardPanel;
-import hu.elte.angry.nerdz.UNO.view.Desk;
+import hu.elte.angry.nerdz.UNO.view.DeskPanel;
 import hu.elte.angry.nerdz.UNO.view.window.AppMenuBar;
 
 public class App extends JFrame {
@@ -29,14 +29,14 @@ public class App extends JFrame {
 	 * Initialize the desk
 	 * @return
 	 */
-	private Desk mockDesk() {
+	private DeskPanel mockDesk() {
 		CardPanel topCard = new CardPanel(7, Color.BLUE);
 		
 		List<CardPanel> initCards = new ArrayList<CardPanel>();
 		initCards.add(new CardPanel(1, Color.YELLOW));
 		initCards.add(new CardPanel(5, Color.RED));
 		initCards.add(new CardPanel(2, Color.GREEN));
-		return new Desk(topCard, initCards);
+		return new DeskPanel(topCard, initCards);
 	}
 
 	@Override
