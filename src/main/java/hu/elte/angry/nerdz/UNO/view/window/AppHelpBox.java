@@ -66,7 +66,7 @@ public class AppHelpBox extends JFrame {
 				+ "If that card can be played, play it. Otherwise, the game moves on to the next person in turn. You can also play a Wild card, or a Wild Draw Four card on your turn"
 				+ "Note:\n If the first card turned up from the Draw Pile (to form the Discard Pile) is an Action card, the Action from that card applies and must be carried out"
 				+ " The exceptions are if the Wild or Wild Draw Four cards are turned up, in which case – Return them to the Draw Pile, shuffle them, and turn over a new card. At any time, if"
-				+ " the Draw Pile becomes depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate a new Draw Pile");
+				+ " the Draw Pile becomes depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate a new Draw Pile"
 				
 				+ "There are two different ways to play regarding drawing new cards. The Official Uno Rules states that after a card is drawn the player can discard it if it is a match, or if not, play passes on to the next player. "
 				+ "The other type is where players continue to draw cards until they have a match, even if it is 10 times"
