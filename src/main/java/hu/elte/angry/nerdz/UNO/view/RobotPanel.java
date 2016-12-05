@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  * @author gp
  *
  */
-public class RobotPanel extends JPanel {
+public class RobotPanel extends JPanel{
 	private static final long serialVersionUID = -4263179279756886584L;
 	private JLabel name;
 	private JLabel cardCount;

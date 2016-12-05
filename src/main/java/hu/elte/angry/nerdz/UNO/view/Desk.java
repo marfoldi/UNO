@@ -1,15 +1,12 @@
 package hu.elte.angry.nerdz.UNO.view;
 
-import hu.elte.angry.nerdz.UNO.model.card.*;
-
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.List;
 
-import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import hu.elte.angry.nerdz.UNO.view.actionlistener.PlayerActionListener;
 
 /**
  * Megjeleníti a két robot játékost a képernyő tetejének jobb és bal felső
@@ -21,14 +18,15 @@ import javax.swing.JPanel;
  */
 public class Desk extends JPanel {
 	private static final long serialVersionUID = 145727429985277184L;
-	private JButton deck;// ez a "húzó-pakli", erre kattintva lehet lapot húzni
-	JButton topOfDeck;// ez az "eldobó-pakli" tetején levő lap
+	
+	private DeckPanel deck;// ez a "húzó-pakli", erre kattintva lehet lapot húzni
+	public CardPanel topOfDeck;// ez az "eldobó-pakli" tetején levő lap
 	private RobotPanel rp1, rp2;// két robot
 	private PlayerPanel playerPanel;// ezen vannak a játékos lapjai
 	private JPanel deckPanel;// Ezen a panelen van a "húzó-pakli", illetve az
 								// "eldobó-pakli", aminek a felső lapja látszik.
 
-	public Desk(ICard lap, List<ICard> initCardList) {
+	public Desk(CardPanel topOfDeck, List<CardPanel> initCardList) {
 		setLayout(new GridLayout(3, 1));
 
 		rp1 = new RobotPanel("Robot1", 7);
@@ -37,32 +35,25 @@ public class Desk extends JPanel {
 		opponentPanel.setLayout(new GridLayout(1, 2));
 		opponentPanel.add(rp1);
 		opponentPanel.add(rp2);
-		this.add(opponentPanel);
+		add(opponentPanel);
 
-		playerPanel = new PlayerPanel(this, initCardList);
+		playerPanel = new PlayerPanel(initCardList);
 
 		deckPanel = new JPanel();
 		deckPanel.setSize(new Dimension(300, 150));
-		// deckPanel.setLayout(new GridLayout(1, 2));
-		deck = new JButton("New card");
-		deck.addActionListener(new PlayerActionListener(this, playerPanel));
+		deck = new DeckPanel();
+//		deck.addActionListener(new PlayerActionListener(this, playerPanel));
 		deck.setPreferredSize(new Dimension(100, 150));
-		// pakli.setIcon(new ImageIcon("uno.jpg"));
 		deckPanel.add(deck);
 
-		topOfDeck = getJButtonFromCard(lap);
-		topOfDeck.setEnabled(false);
-		topOfDeck.setPreferredSize(new Dimension(100, 150));
+		this.topOfDeck = topOfDeck;
+		this.topOfDeck.setEnabled(false);
+		this.topOfDeck.setPreferredSize(new Dimension(100, 150));
 		deckPanel.add(topOfDeck);
 
 		add(deckPanel);
 
 		add(playerPanel);
-		playerPanel.addCard(new Card(CardColor.RED, CardValue.SEVEN));
-
-		// rp1.lapokSzama(10);
-		// jatekosPanel.lapotHozzaad(new Card(CardColor.RED, CardValue.SEVEN));
-		// jatekosPanel.lapotDob(1);
 	}
 
 	/**
@@ -70,28 +61,12 @@ public class Desk extends JPanel {
 	 * 
 	 * @param card
 	 */
-	public void showTopOfDeck(ICard card) {
+	public void putOnTopOfDeck(CardPanel card) {
 		setVisible(false);
 		deckPanel.remove(topOfDeck);
-		topOfDeck = getJButtonFromCard(card);
+		topOfDeck = card;
 		topOfDeck.setEnabled(false);
 		deckPanel.add(topOfDeck);
 		setVisible(true);
-	}
-
-	/**
-	 * A paraméterben kapott ICard színével és szimbólumával megegyező JButton-t
-	 * ad vissza.
-	 * 
-	 * @param card
-	 * @return
-	 */
-	private JButton getJButtonFromCard(ICard card) {
-		JButton btn = new JButton(card.getValue().getPrimitiveValue());
-		btn.setForeground(Color.DARK_GRAY);
-		btn.setFont(new Font(getName(), Font.BOLD, 18));
-		btn.setBackground(card.getColor().getAwtColor());
-		btn.setPreferredSize(new Dimension(100, 150));
-		return btn;
 	}
 }

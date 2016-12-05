@@ -1,5 +1,6 @@
 package hu.elte.angry.nerdz.UNO;
 
+import java.awt.Color;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
-import hu.elte.angry.nerdz.UNO.model.card.Card;
-import hu.elte.angry.nerdz.UNO.model.card.CardColor;
-import hu.elte.angry.nerdz.UNO.model.card.CardValue;
-import hu.elte.angry.nerdz.UNO.model.card.ICard;
+import hu.elte.angry.nerdz.UNO.view.CardPanel;
 import hu.elte.angry.nerdz.UNO.view.Desk;
 import hu.elte.angry.nerdz.UNO.view.window.AppMenuBar;
 
@@ -32,12 +30,12 @@ public class App extends JFrame {
 	 * @return
 	 */
 	private Desk mockDesk() {
-		Card topCard = new Card(CardColor.BLUE, CardValue.SEVEN);
+		CardPanel topCard = new CardPanel(7, Color.BLUE);
 		
-		List<ICard> initCards = new ArrayList<ICard>();
-		initCards.add(new Card(CardColor.YELLOW, CardValue.ONE));
-		initCards.add(new Card(CardColor.RED, CardValue.FIVE));
-		initCards.add(new Card(CardColor.GREEN, CardValue.TWO));
+		List<CardPanel> initCards = new ArrayList<CardPanel>();
+		initCards.add(new CardPanel(1, Color.YELLOW));
+		initCards.add(new CardPanel(5, Color.RED));
+		initCards.add(new CardPanel(2, Color.GREEN));
 		return new Desk(topCard, initCards);
 	}
 
