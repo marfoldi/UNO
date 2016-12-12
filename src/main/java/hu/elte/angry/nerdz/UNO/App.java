@@ -1,17 +1,12 @@
 package hu.elte.angry.nerdz.UNO;
 
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 import hu.elte.angry.nerdz.UNO.view.DeskPanel;
-import hu.elte.angry.nerdz.UNO.view.card.CardButton;
-import hu.elte.angry.nerdz.UNO.view.card.CardColor;
-import hu.elte.angry.nerdz.UNO.view.card.CardValue;
 import hu.elte.angry.nerdz.UNO.view.window.AppMenuBar;
 
 public class App extends JFrame {

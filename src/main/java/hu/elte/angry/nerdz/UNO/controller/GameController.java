@@ -15,7 +15,7 @@ import hu.elte.angry.nerdz.UNO.model.manager.GameManager;
 import hu.elte.angry.nerdz.UNO.model.player.IPlayer;
 import hu.elte.angry.nerdz.UNO.model.player.Player;
 import hu.elte.angry.nerdz.UNO.model.player.RobotPlayer;
-import hu.elte.angry.nerdz.UNO.view.CardPanel;
+import hu.elte.angry.nerdz.UNO.view.card.CardButton;
 import hu.elte.angry.nerdz.UNO.view.DeskPanel;
 import hu.elte.angry.nerdz.UNO.view.PlayerPanel;
 import hu.elte.angry.nerdz.UNO.view.RobotPanel;
@@ -52,12 +52,12 @@ public class GameController implements IGameController {
 	}
 
 	private void initView() {
-		CardPanel topOfDeck = parseCard(model.getTopCard());
+		CardButton topOfDeck = parseCard(model.getTopCard());
 		List<RobotPanel> robotPanels = new ArrayList<>();
 		for(int i=0;i<robotPlayers.size();i++){
 			robotPanels.add(new RobotPanel("Robot"+i));
 		}
-		List<CardPanel> panelCards = new ArrayList<>();
+		List<CardButton> panelCards = new ArrayList<>();
 		for(ICard card : player.getCards()){
 			panelCards.add(parseCard(card));
 		}
@@ -93,8 +93,8 @@ public class GameController implements IGameController {
 		}
 	}
 
-	private CardPanel parseCard(ICard card) {
-		return new CardPanel(card.getValue().ordinal(), parseColor(card.getColor()));
+	private CardButton parseCard(ICard card) {
+		return new CardButton(parseColor(card.getColor()),card.getValue().ordinal());
 	}
 
 	private Color parseColor(CardColor color) {

@@ -24,7 +24,7 @@ public class DeskPanel extends JPanel {
 	private PlayerPanel playerPanel;
 	private JPanel deckPanel;
 
-	public DeskPanel(CardPanel topOfDeck, List<RobotPanel> robotPanels, PlayerPanel player) {
+	public DeskPanel(CardButton topOfDeck, List<RobotPanel> robotPanels, PlayerPanel player) {
 		setLayout(new GridLayout(3, 1));
 		this.robotPlayers = robotPanels;
 		this.playerPanel = player;
