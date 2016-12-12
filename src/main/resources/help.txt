@@ -60,8 +60,67 @@ Reverse
 If going clockwise, switch to counterclockwise or vice versa
 Skip
 When a player places this card, the next player has to skip their turn. If turned up at the beginning, the first player loses his/her turn
-Draw Two
+Draw Two Cards
 When a person places this card, the next player will have to pick up two cards and forfeit his/her turn
-Wild
+Wild Card
 This card represents all four colors, and can be placed on any card. The player has to state which color it will represent for the next player.
 It can be played regardless of whether another card is available.
+
+GOING OUT
+
+A player who forgets to say UNO before his card touches the DISCARD pile, but "catches" himself before any other player catches him, is safe and is not subject to the penalty.
+
+You may not catch a player for failure to say UNO until his second to last card touches the DISCARD pile. Also, you may not catch a player for failure to say UNO after thenext player begins his turn. "Beginning a turn" is defined as either drawing a card from the DRAW pile or drawing a card from your hand to play.
+
+If the last card played in a hand is a Draw Two or Wild Draw Four card, the next player must draw the two or four cards. These cards are counted when points are totaled.
+
+If no one is out of cards by the time the DRAW pile is depleted, reshuffle and continue play.
+
+SCORING
+
+When a player is out of cards, he gets points for cards left in opponent's hands as follows:
+
+All cards through 9 Face value
+Draw2 2O points
+Reverse 20 points
+Skip 20 points
+Wild 50 points
+Wild Draw 4 50 points
+
+The WINNER is the first player to reach 500 points. However, the game may be scored by keeping a running total of points each player is caught with at the end of each hand. When one player reaches 500 points, the player with the lowest points is the winner.
+
+RENEGING
+
+A player may choose not to play a playable card from his hand. If so, the player must draw a card from the DRAW pile. If playable, that card can be played, but the player may not play a card from his hand after the draw.
+
+WHAT WOULD A GAME BE WITHOUT PENALTIES
+
+If a player makes a card suggestion to another player, he must draw 4 cards.
+
+If a player plays a Wild Draw 4 card illegally and gets caught, he must first show his hand to the player who challenged. If guilty, he must draw 4 cards. If not guilty, the challenger must draw 2 cards in addition to the 4.
+
+The challenge only canbe made by the person required to draw the four cards.
+
+TWO-HANDED PLAY, PARTNERS AND MULTI-TABLE TOURNAMENTS:
+
+Rules for Two Players- Play UNO with two players with the following
+
+Special Rules:
+
+1. Playing a Reverse card acts like a Skip. The player who plays the Reverse may immediately play another card.
+
+2. The person playing a Skip card may immediately play another card.
+
+3. When a Draw Two card is played and your opponent has drawn two cards, the play is back to you. The same principle applies to the Wild Draw Four card. Regular UNO rules apply in all other instances.
+
+Partners- Four Players- Sit across from your partner. When either partner goes out, the hand is over. Total all of the points in both opposing partner's hands and score for winning team.
+
+Variation-With four players, play four hands with each of the other three players as your partner (a total of 12 hands). Each player keeps track of his points scored in each partnership. Play several rounds, with the person scoring the highest number of points declared the winner.
+
+With eight players, play two separate games at two tables, with each player having every other player as a partner for four hands each (a total of 28 hands). Score as above.
+
+4-6-8-10 Players- If several couples wish to play "UNO," seat them alternately, one man, one woman, etc., and play the men versus the women. Once a man or woman goes out, all teammates throw in their cards and the opposing team totals the points in all of their hands. First team to accumulate 500 points is the winner.
+
+Challenge UNO- This game is scored by keeping a running total of what each player is caught with in his hand. As each player reaches a designated amount, we suggest 500, he is eliminated from the game. When only two players are left in the game, they play head to head. When a player reaches or exceeds the amount designated, he loses. The winner of that final hand is declared the winning player of the game. (See special rules for two-handed UNO). THE MAKERS OF UNO FIND THIS VARIATION THE MOST CHALLENGING WAYTO PLAY.
+
+
