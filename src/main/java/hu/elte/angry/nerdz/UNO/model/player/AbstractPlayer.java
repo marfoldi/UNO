@@ -40,4 +40,8 @@ public abstract class AbstractPlayer implements IPlayer {
 		
 		return filteredCards;
 	}
+	
+	public int getCardNum(){
+		return this.cards.size();
+	}
 }

@@ -17,28 +17,16 @@ import hu.elte.angry.nerdz.UNO.view.window.AppMenuBar;
 public class App extends JFrame {
 	private static final long serialVersionUID = -5071602386904303971L;
 
-	public App() {
+	public App(DeskPanel desk) {
 		super("UNO");
 		this.setSize(800, 600);
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setJMenuBar(new AppMenuBar());
-		this.add(mockDesk());
+		this.add(desk);
 		this.setVisible(true);
 	}
 
-	/**
-	 * Initialize the desk
-	 * @return
-	 */
-	private DeskPanel mockDesk() {
-		CardButton topCard = new CardButton(CardColor.BLUE, CardValue.SEVEN);
-		
-		List<CardButton> initCards = new ArrayList<CardButton>();
-		initCards.add(new CardButton(CardColor.YELLOW, CardValue.ONE));
-		initCards.add(new CardButton(CardColor.RED, CardValue.FIVE));
-		initCards.add(new CardButton(CardColor.GREEN, CardValue.TWO));
-		return new DeskPanel(topCard, initCards);
-	}
+
 
 	@Override
 	protected void processWindowEvent(WindowEvent e) {
@@ -50,9 +38,5 @@ public class App extends JFrame {
 		} else {
 			super.processWindowEvent(e);
 		}
-	}
-
-	public static void main(String[] args) {
-		new App();
 	}
 }

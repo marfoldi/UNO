@@ -20,22 +20,22 @@ public class DeskPanel extends JPanel {
 	
 	private DeckPanel deck;
 	public CardButton topOfDeck;
-	private RobotPanel rp1, rp2;
+	private List<RobotPanel> robotPlayers;
 	private PlayerPanel playerPanel;
 	private JPanel deckPanel;
 
-	public DeskPanel(CardButton topOfDeck, List<CardButton> initCardList) {
+	public DeskPanel(CardPanel topOfDeck, List<RobotPanel> robotPanels, PlayerPanel player) {
 		setLayout(new GridLayout(3, 1));
-
-		rp1 = new RobotPanel("Robot1");
-		rp2 = new RobotPanel("Robot2");
+		this.robotPlayers = robotPanels;
+		this.playerPanel = player;
 		JPanel opponentPanel = new JPanel();
 		opponentPanel.setLayout(new GridLayout(1, 2));
-		opponentPanel.add(rp1);
-		opponentPanel.add(rp2);
+		
+		for (RobotPanel panel : robotPlayers){
+			opponentPanel.add(panel);
+		}
+			
 		add(opponentPanel);
-
-		playerPanel = new PlayerPanel(initCardList);
 
 		deckPanel = new JPanel();
 		deckPanel.setSize(new Dimension(300, 150));

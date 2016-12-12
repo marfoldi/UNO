@@ -130,5 +130,16 @@ public class GameManager implements IGameManager {
 			
 		});
 	}
+
+	public ICard getTopCard() {
+		return topCard;
+	}
+	
+	public IPlayer getPlayer(int ind){
+		if(ind >= players.size()){
+			return null;
+		}
+		return players.get(ind);
+	}
 	
 }

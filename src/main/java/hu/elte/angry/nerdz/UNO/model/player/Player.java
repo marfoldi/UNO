@@ -1,5 +1,7 @@
 package hu.elte.angry.nerdz.UNO.model.player;
 
+import java.util.List;
+
 import hu.elte.angry.nerdz.UNO.model.card.ICard;
 
 /**
@@ -42,4 +44,7 @@ public class Player extends AbstractPlayer{
 		return completionHandler;
 	}
 	
+	public List<ICard> getCards(){
+		return cards;
+	}
 }
