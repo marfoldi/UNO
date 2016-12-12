@@ -31,10 +31,10 @@ public class GameController implements IGameController {
 	private List<RobotPlayer> robotPlayers;
 	private Player player;
 
-	private final int startCardNum;
-	
+	// private final int startCardNum;
+
 	public static void main(String[] args) {
-		GameController c = new GameController(7, 3);
+		GameController c = new GameController(7, 2);
 	}
 
 	/**
@@ -43,31 +43,31 @@ public class GameController implements IGameController {
 	 */
 	public GameController(int startCardNum, int opponentPlayerCount) {
 		super();
-		this.startCardNum = startCardNum;
+		// this.startCardNum = startCardNum;
 		initPlayers(opponentPlayerCount);
 		initModel();
 		model.start(startCardNum);
-		initView();
+		initView(startCardNum);
 		new App(view);
 	}
 
-	private void initView() {
+	private void initView(int startCardNum) {
 		CardButton topOfDeck = parseCard(model.getTopCard());
 		List<RobotPanel> robotPanels = new ArrayList<>();
-		for(int i=0;i<robotPlayers.size();i++){
-			robotPanels.add(new RobotPanel("Robot"+i));
+		for (int i = 0; i < robotPlayers.size(); i++) {
+			robotPanels.add(new RobotPanel("Robot" + (i + 1), startCardNum));
 		}
 		List<CardButton> panelCards = new ArrayList<>();
-		for(ICard card : player.getCards()){
+		for (ICard card : player.getCards()) {
 			panelCards.add(parseCard(card));
 		}
-			
+
 		PlayerPanel playerPanel = new PlayerPanel(panelCards);
 		view = new DeskPanel(topOfDeck, robotPanels, playerPanel);
 	}
 
 	private void initModel() {
-		List<ICard> deckCards= new ArrayList<>();
+		List<ICard> deckCards = new ArrayList<>();
 		try {
 			deckCards = getDeckCards();
 		} catch (IOException | URISyntaxException e) {
@@ -88,29 +88,29 @@ public class GameController implements IGameController {
 	private void initPlayers(int opponentPlayerCount) {
 		robotPlayers = new ArrayList<>();
 		player = new Player();
-		for(int i=0; i<opponentPlayerCount ; i++){
+		for (int i = 0; i < opponentPlayerCount; i++) {
 			robotPlayers.add(new RobotPlayer());
 		}
 	}
 
 	private CardButton parseCard(ICard card) {
-		return new CardButton(parseColor(card.getColor()),card.getValue().ordinal());
+		return new CardButton(parseColor(card.getColor()), card.getValue().ordinal());
 	}
 
 	private Color parseColor(CardColor color) {
 		switch (color) {
-			case BLACK:
-				return Color.BLACK;
-			case BLUE:
-				return Color.BLUE;
-			case GREEN:
-				return Color.GREEN;
-			case RED:
-				return Color.RED;
-			case YELLOW:
-				return Color.YELLOW;
-			default:
-				return Color.BLACK;
+		case BLACK:
+			return Color.BLACK;
+		case BLUE:
+			return Color.BLUE;
+		case GREEN:
+			return Color.GREEN;
+		case RED:
+			return Color.RED;
+		case YELLOW:
+			return Color.YELLOW;
+		default:
+			return Color.BLACK;
 		}
 	}
 }

@@ -13,15 +13,15 @@ import javax.swing.JPanel;
  * @author gp
  *
  */
-public class RobotPanel extends JPanel{
+public class RobotPanel extends JPanel {
 	private static final long serialVersionUID = -4263179279756886584L;
 	private JLabel robotName;
 	private JLabel cardCount;
 	private ImageIcon sprite;
 
-	public RobotPanel(String name) {
+	public RobotPanel(String name, int startCardNum) {
 		this.robotName = new JLabel(name);
-		this.cardCount = new JLabel("0 cards");
+		this.cardCount = new JLabel(startCardNum + " cards");
 		sprite = new ImageIcon("src/main/resources/robot2.jpg");
 		add(this.robotName);
 		add(this.cardCount);
@@ -30,13 +30,14 @@ public class RobotPanel extends JPanel{
 		wrapperButton.setDisabledIcon(sprite);
 		add(wrapperButton);
 	}
-	
-	public int getCardCount() throws ParseException{
+
+	public int getCardCount() throws ParseException {
 		final String ccAsSTring = cardCount.getText();
-		return Integer.parseInt(ccAsSTring.substring(ccAsSTring.length()-7, ccAsSTring.length()-1));
+		return Integer.parseInt(ccAsSTring.substring(ccAsSTring.length() - 7, ccAsSTring.length() - 1));
 	}
 
 	public void setCardCount(int cardCount) {
-		this.cardCount.setText(cardCount+" cards");;
+		this.cardCount.setText(cardCount + " cards");
+		;
 	}
 }
