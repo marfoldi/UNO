@@ -8,6 +8,7 @@ package hu.elte.angry.nerdz.UNO.model.card;
  *
  */
 public class Card implements ICard {
+	public static final CardColor NULL = null;
 	private CardColor color;
 	private CardValue value;
 
