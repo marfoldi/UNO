@@ -11,7 +11,7 @@ public class CardValueTest {
 	@Test
 	public void testCardColorFromString(){
 		Integer val = 2;
-		CardValue cv = CardValue.fromPrimitiveValue(Integer.toString(val));
+		CardValue cv = CardValue.fromPrimitiveValue(val);
 		assertEquals(Integer.valueOf(cv.getPrimitiveValue()), val);
 	}
 }

@@ -91,7 +91,7 @@ public class ConsolePlayer extends AbstractPlayer {
 	}
 	
 	private ICard createCardFrom(String colorCase, String numberCase) {
-		return new Card(CardColor.fromString(colorCase.toLowerCase()), CardValue.fromPrimitiveValue(numberCase));
+		return new Card(CardColor.fromString(colorCase.toLowerCase()), CardValue.fromPrimitiveValue(Integer.valueOf(numberCase)));
 	}
 
 }
