@@ -1,7 +1,5 @@
 package hu.elte.angry.nerdz.UNO.model.card;
 
-import java.awt.Color;
-
 /**
  * 
  * @author Peter Gerencser
@@ -10,19 +8,16 @@ import java.awt.Color;
  *
  */
 public enum CardColor {
-	YELLOW("yellow", Color.YELLOW), RED("red", Color.RED), GREEN("green", Color.GREEN), BLUE("blue", Color.BLUE), BLACK("black", Color.BLACK);
+	YELLOW("yellow"), RED("red"), GREEN("green"), BLUE("blue"), BLACK("black");
 	
 	private final String stringRepresentation;
-	private final Color awtColor;
 	
 	/**
 	 * CardColor constructor
 	 * @param stringRepresentation
-	 * @param awtColor
 	 */
-	private CardColor(String stringRepresentation, Color awtColor) {
+	private CardColor(String stringRepresentation) {
 		this.stringRepresentation = stringRepresentation;
-		this.awtColor = awtColor;
 	}
 
 	/**
@@ -30,13 +25,6 @@ public enum CardColor {
 	 */
 	public String getStringRepresentation() {
 		return stringRepresentation;
-	}
-	
-	/**
-	 * @return the awtColor
-	 */
-	public Color getAwtColor() {
-		return awtColor;
 	}
 
 	/**
@@ -47,20 +35,6 @@ public enum CardColor {
 	public static CardColor fromString(String value) {
 		for(CardColor cardColor : CardColor.values()) {
 			if(cardColor.stringRepresentation.equals(value)) {
-				return cardColor;
-			}
-		}
-		return null;
-	}
-	
-	/**
-	 * Looks up a CardColor by it's awt color value
-	 * @param value
-	 * @return
-	 */
-	public static CardColor fromAwtColor(Color color) {
-		for(CardColor cardColor : CardColor.values()) {
-			if(cardColor.awtColor.equals(color)) {
 				return cardColor;
 			}
 		}

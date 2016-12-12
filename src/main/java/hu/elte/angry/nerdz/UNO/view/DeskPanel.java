@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import hu.elte.angry.nerdz.UNO.view.actionlistener.PlayerActionListener;
+import hu.elte.angry.nerdz.UNO.view.card.CardButton;
 
 /**
  * Desk where the players, deck and top card is.
@@ -18,12 +19,12 @@ public class DeskPanel extends JPanel {
 	private static final long serialVersionUID = 145727429985277184L;
 	
 	private DeckPanel deck;
-	public CardPanel topOfDeck;
+	public CardButton topOfDeck;
 	private RobotPanel rp1, rp2;
 	private PlayerPanel playerPanel;
 	private JPanel deckPanel;
 
-	public DeskPanel(CardPanel topOfDeck, List<CardPanel> initCardList) {
+	public DeskPanel(CardButton topOfDeck, List<CardButton> initCardList) {
 		setLayout(new GridLayout(3, 1));
 
 		rp1 = new RobotPanel("Robot1");
@@ -58,7 +59,7 @@ public class DeskPanel extends JPanel {
 	 * @param card 
 	 * 			Card to put on the top of the deck
 	 */
-	public void putOnTopOfDeck(CardPanel card) {
+	public void putOnTopOfDeck(CardButton card) {
 		setVisible(false);
 		deckPanel.remove(topOfDeck);
 		topOfDeck = card;

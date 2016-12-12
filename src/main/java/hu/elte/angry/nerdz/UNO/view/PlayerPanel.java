@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import hu.elte.angry.nerdz.UNO.view.card.CardButton;
+
 /**
  * Player panel
  * 
@@ -20,7 +22,7 @@ public class PlayerPanel extends JPanel{
 	private List<JButton> cardList = new ArrayList<>();
 	private JPanel panel;// Panel with the cards on
 
-	public PlayerPanel(List<CardPanel> initCardList) {
+	public PlayerPanel(List<CardButton> initCardList) {
 		this.panel = new JPanel();
 		JScrollPane sp = new JScrollPane(panel);
 		sp.setPreferredSize(new Dimension(600, 180));
@@ -33,7 +35,7 @@ public class PlayerPanel extends JPanel{
 	 * 
 	 * @param card
 	 */
-	public void addCard(CardPanel card, ActionListener actionListener) {
+	public void addCard(CardButton card, ActionListener actionListener) {
 		card.addActionListener(actionListener);
 		cardList.add(card);
 		showCards();
@@ -64,7 +66,7 @@ public class PlayerPanel extends JPanel{
 	 * 
 	 * @param cardList
 	 */
-	private void addCards(List<CardPanel> cardList) {
+	private void addCards(List<CardButton> cardList) {
 		this.cardList.addAll(cardList);
 		showCards();
 	}

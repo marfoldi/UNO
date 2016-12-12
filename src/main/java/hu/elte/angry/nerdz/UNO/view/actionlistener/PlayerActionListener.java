@@ -1,13 +1,14 @@
 package hu.elte.angry.nerdz.UNO.view.actionlistener;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-import hu.elte.angry.nerdz.UNO.view.CardPanel;
+import hu.elte.angry.nerdz.UNO.view.card.CardColor;
 import hu.elte.angry.nerdz.UNO.view.DeskPanel;
 import hu.elte.angry.nerdz.UNO.view.PlayerPanel;
+import hu.elte.angry.nerdz.UNO.view.card.CardButton;
+import hu.elte.angry.nerdz.UNO.view.card.CardValue;
 
 /**
  * New card and player cards action.
@@ -52,25 +53,25 @@ public class PlayerActionListener implements ActionListener {
 	 *
 	 * @return
 	 */
-	protected CardPanel randomCard() {
+	protected CardButton randomCard() {
 		Random rnd = new Random();
-		Color cardColor = null;
+		CardColor cardColor = null;
 		switch (rnd.nextInt(4)) {
 		case 0:
-			cardColor = Color.YELLOW;
+			cardColor = CardColor.YELLOW;
 			break;
 		case 1:
-			cardColor = Color.RED;
+			cardColor = CardColor.RED;
 			break;
 		case 2:
-			cardColor = Color.GREEN;
+			cardColor = CardColor.GREEN;
 			break;
 		case 3:
-			cardColor = Color.BLUE;
+			cardColor = CardColor.BLUE;
 			break;
 		}
 		int cardValue = rnd.nextInt(10);
-		return new CardPanel(cardValue, cardColor);
+		return new CardButton(cardColor, CardValue.fromPrimitiveValue(Integer.toString(cardValue)));
 	}
 
 }
