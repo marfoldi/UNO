@@ -11,6 +11,7 @@ import hu.elte.angry.nerdz.UNO.model.card.CardColor;
 import hu.elte.angry.nerdz.UNO.model.card.ICard;
 import hu.elte.angry.nerdz.UNO.model.cardparser.DeckParser;
 import hu.elte.angry.nerdz.UNO.model.deck.Deck;
+import hu.elte.angry.nerdz.UNO.model.help.HelpReader;
 import hu.elte.angry.nerdz.UNO.model.manager.GameManager;
 import hu.elte.angry.nerdz.UNO.model.player.IPlayer;
 import hu.elte.angry.nerdz.UNO.model.player.Player;
@@ -112,5 +113,19 @@ public class GameController implements IGameController {
 			default:
 				return Color.BLACK;
 		}
+	}
+	
+	/**
+	 * Returns the help file content
+	 * @return
+	 */
+	public static String getHelpFileContent() {
+		try {
+			return new HelpReader().getHelpContent();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

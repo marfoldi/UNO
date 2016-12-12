@@ -8,6 +8,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
+import hu.elte.angry.nerdz.UNO.controller.GameController;
 import hu.elte.angry.nerdz.UNO.model.help.HelpReader;
 
 
@@ -22,12 +23,7 @@ public class AppHelpBox extends JFrame {
 		message.setFocusable(false);
 		message.setOpaque(false);
 
-		try {
-			message.setText(new HelpReader().getHelpContent());
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		message.setText(GameController.getHelpFileContent());
 		
 		// create a scrollpane, givin it the textarea as a constructor argument
 		JScrollPane ScrollPane = new JScrollPane(message, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
