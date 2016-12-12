@@ -29,6 +29,7 @@ public class GameManager implements IGameManager {
 	private Map<IPlayer, List<ICard>> playersCards;
 	private List<IPlayer> players;
 	private IDeck deck;
+	private ICard newCard;
 	
 	public GameManager(List<IPlayer> players, IDeck deck) {
 		this.players = players;
@@ -100,6 +101,8 @@ public class GameManager implements IGameManager {
 				ICard card = deck.drawCard();
 				playerCards.add(card);
 				
+				newCard = card;
+				
 				// TODO call this on different thread
 				player.onCardsChange();
 				
@@ -141,5 +144,11 @@ public class GameManager implements IGameManager {
 		}
 		return players.get(ind);
 	}
-	
+
+	/**
+	 * @return the newCard
+	 */
+	public ICard getNewCard() {
+		return newCard;
+	}
 }

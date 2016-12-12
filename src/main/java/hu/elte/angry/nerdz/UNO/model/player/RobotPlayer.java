@@ -1,5 +1,6 @@
 package hu.elte.angry.nerdz.UNO.model.player;
 
+import hu.elte.angry.nerdz.UNO.controller.GameController;
 import hu.elte.angry.nerdz.UNO.model.card.ICard;
 
 import java.util.List;
@@ -10,8 +11,18 @@ import java.util.TimerTask;
 public class RobotPlayer extends AbstractPlayer {
 	
 	private Timer timer;
+	private GameController controller;
 	
+	public RobotPlayer(GameController controller) {
+		timer = new Timer();
+		this.controller = controller;
+	}
+
+	/**
+	 * 
+	 */
 	public RobotPlayer() {
+		super();
 		timer = new Timer();
 	}
 
@@ -41,6 +52,7 @@ public class RobotPlayer extends AbstractPlayer {
 	    			int cardIndex = (new Random()).nextInt(validCards.size());
 	    			ICard cardToDrop = validCards.get(cardIndex);
 	    			System.out.println("Dropping card: " + cardToDrop);
+	    			if(controller != null) controller.setViewTopCard(cardToDrop);
 	    			completionHandler.drop(cardToDrop);
 	    		}
 	        	

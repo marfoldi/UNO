@@ -19,14 +19,15 @@ import hu.elte.angry.nerdz.UNO.view.card.CardButton;
  */
 public class PlayerPanel extends JPanel{
 	private static final long serialVersionUID = 6328789247989590931L;
-	private List<JButton> cardList = new ArrayList<>();
+	private List<CardButton> cardList = new ArrayList<>();
 	private JPanel panel;// Panel with the cards on
+	private JScrollPane scrollPane;
 
 	public PlayerPanel(List<CardButton> initCardList) {
 		this.panel = new JPanel();
-		JScrollPane sp = new JScrollPane(panel);
-		sp.setPreferredSize(new Dimension(600, 180));
-		add(sp);
+		scrollPane = new JScrollPane(panel);
+		scrollPane.setPreferredSize(new Dimension(600, 180));
+		add(scrollPane);
 		addCards(initCardList);
 	}
 
@@ -50,6 +51,8 @@ public class PlayerPanel extends JPanel{
 			panel.add(card);
 		}
 		panel.setVisible(true);
+		panel.repaint();
+		scrollPane.repaint();
 	}
 
 	/**
@@ -57,8 +60,10 @@ public class PlayerPanel extends JPanel{
 	 *
 	 * @param i Index of the card to be deleted.
 	 */
-	public void dropCard(int i) {
-		panel.remove(cardList.remove(i));
+	public void dropCard(CardButton button) {
+		panel.remove(cardList.indexOf(button));
+		cardList.remove(button);
+		showCards();
 	}
 
 	/**

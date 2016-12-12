@@ -12,7 +12,7 @@ import hu.elte.angry.nerdz.UNO.model.card.ICard;
  * This class is used by a real person playing this game.
  *
  */
-public class Player extends AbstractPlayer{
+public class Player extends AbstractPlayer {
 	
 	protected ICard actCard;
 	protected StepCompletion completionHandler;
